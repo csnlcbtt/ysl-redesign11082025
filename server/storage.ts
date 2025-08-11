@@ -89,7 +89,7 @@ export class MemStorage implements IStorage {
         client: "Industrial Client",
         category: "Industrial",
         year: 2023,
-        imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        imageUrl: "/api/assets/New Assets/m5000.jpg",
         isPublished: true,
         createdAt: new Date('2023-01-15')
       },
@@ -100,18 +100,18 @@ export class MemStorage implements IStorage {
         client: "Cultural Authority",
         category: "Cultural",
         year: 2022,
-        imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        imageUrl: "/api/assets/New Assets/shaw park.jpg",
         isPublished: true,
         createdAt: new Date('2022-06-10')
       },
       {
         id: this.currentProjectId++,
-        title: "University of Trinidad & Tobago (UTT) Omeara",
-        description: "Educational facility structural engineering project supporting modern learning environments.",
-        client: "University of Trinidad & Tobago",
-        category: "Educational",
+        title: "Skinner Park Project",
+        description: "State-of-the-art recreational facility featuring modern steel construction and innovative design elements for community use.",
+        client: "Ministry of Sport and Youth Affairs",
+        category: "Recreational",
         year: 2021,
-        imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        imageUrl: "/api/assets/New Assets/Skinner-Park.jpg",
         isPublished: true,
         createdAt: new Date('2021-09-20')
       },
@@ -122,7 +122,7 @@ export class MemStorage implements IStorage {
         client: "Airport Authority",
         category: "Infrastructure",
         year: 2020,
-        imageUrl: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+        imageUrl: "/api/assets/New Assets/piarco.jpg",
         isPublished: true,
         createdAt: new Date('2020-11-30')
       }

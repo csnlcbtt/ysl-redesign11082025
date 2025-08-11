@@ -31,7 +31,7 @@ export default function Home() {
                 <h2 className="text-3xl font-bold yorke-gray mb-4">Welcome</h2>
                 <div className="yorke-beige border border-yorke-border rounded p-4 mb-4">
                   <p className="text-lg leading-relaxed">
-                    Welcome to the {COMPANY_INFO.name} Website. {COMPANY_INFO.name} is the {COMPANY_INFO.description}! We have 40+ years in the construction of projects.
+                    Welcome to the {COMPANY_INFO.name} Website. {COMPANY_INFO.name} is the {COMPANY_INFO.description}! We have 50+ years in the construction of projects.
                   </p>
                   <Link href="/about" className="inline-block mt-2 yorke-orange hover:underline font-semibold">
                     Read more.

@@ -119,7 +119,7 @@ export default function ProductsServices() {
                 <h3 className="text-xl font-bold yorke-orange mb-4">Steel Fabrication Excellence</h3>
                 <p className="yorke-gray leading-relaxed mb-4">
                   Our products are manufactured using the latest technology and highest quality standards. 
-                  With over 40 years of experience, we deliver precision-engineered steel solutions that meet 
+                  With over 50 years of experience, we deliver precision-engineered steel solutions that meet 
                   the demanding requirements of Caribbean construction projects.
                 </p>
                 <ul className="space-y-2 text-sm yorke-gray">

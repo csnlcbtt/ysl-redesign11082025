@@ -41,10 +41,11 @@ export const NAVIGATION_ITEMS = [
     label: "About Us",
     path: "/about",
     children: [
-      { label: "Company Profile", path: "/about/profile" },
+      { label: "Company Profile", path: "/about" },
       { label: "Robert T. Yorke", path: "/about/robert-yorke" },
       { label: "Management", path: "/about/management" },
       { label: "Facility", path: "/about/facility" },
+      { label: "Quality Management", path: "/quality" },
       { label: "News", path: "/about/news" }
     ]
   },
@@ -57,7 +58,5 @@ export const NAVIGATION_ITEMS = [
     ]
   },
   { label: "Projects", path: "/projects" },
-  { label: "Quality Management", path: "/quality" },
-  { label: "Contact Us", path: "/contact" },
-  { label: "Other Links", path: "/links" }
+  { label: "Contact Us", path: "/contact" }
 ];

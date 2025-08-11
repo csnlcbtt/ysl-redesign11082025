@@ -25,7 +25,7 @@ export default function Projects() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold yorke-gray mb-4">Our Projects</h1>
         <p className="text-xl yorke-gray max-w-3xl mx-auto">
-          Showcasing 40+ years of excellence in structural engineering and steel fabrication across the Caribbean
+          Showcasing 50+ years of excellence in structural engineering and steel fabrication across the Caribbean
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export default function Projects() {
       <div className="mt-12 text-center yorke-beige border border-yorke-border rounded-lg p-8">
         <h2 className="text-2xl font-bold yorke-gray mb-4">Ready to Start Your Project?</h2>
         <p className="yorke-gray mb-6 max-w-2xl mx-auto">
-          With over 40 years of experience in structural engineering and steel fabrication, 
+          With over 50 years of experience in structural engineering and steel fabrication, 
           we're ready to help bring your vision to life. Contact us today to discuss your project requirements.
         </p>
         <div className="space-x-4">

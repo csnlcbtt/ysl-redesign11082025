@@ -122,3 +122,123 @@
     height: 188px;
   }
 }
+
+/* Yorke Structures Breadcrumb Styles */
+.ysl-bc {
+  background-color: #f7f7f7;
+  border-bottom: 1px solid var(--yorke-border);
+  padding: 0.75rem 0;
+  font-size: 0.875rem;
+  position: sticky;
+  top: 73px; /* Adjust based on your header height */
+  z-index: 30;
+}
+
+.ysl-bc-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+
+.ysl-bc-item {
+  display: flex;
+  align-items: center;
+}
+
+.ysl-bc-separator {
+  margin: 0 0.5rem;
+  color: #666;
+  flex-shrink: 0;
+}
+
+.ysl-bc-link {
+  color: var(--yorke-orange);
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ysl-bc-link:hover,
+.ysl-bc-link:focus {
+  color: hsl(25, 95%, 35%);
+  background-color: rgba(224, 91, 46, 0.1);
+  outline: 2px solid var(--yorke-orange);
+  outline-offset: 2px;
+}
+
+.ysl-bc-current {
+  color: #666;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .ysl-bc {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+  }
+  
+  .ysl-bc-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .ysl-bc-list::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .ysl-bc-link,
+  .ysl-bc-current {
+    max-width: 120px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .ysl-bc-link,
+  .ysl-bc-current {
+    max-width: 80px;
+  }
+  
+  .ysl-bc-item:not(:last-child):not(:first-child) {
+    display: none;
+  }
+  
+  .ysl-bc-item:nth-last-child(2)::before {
+    content: "...";
+    margin-right: 0.5rem;
+    color: #666;
+  }
+}
+
+/* Leaflet Map Styles */
+.yorke-map {
+  height: 420px;
+  width: 100%;
+  z-index: 1;
+}
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-popup-content {
+  text-align: center;
+  font-family: inherit;
+}

@@ -43,7 +43,7 @@ export default function About() {
                     Yorke Structures Limited was established on July 31, 1972 by Dr. Robert T. Yorke and commenced business with 10 employees. Today the company employs over 250 people and operates the largest steel fabrication facility in the Caribbean, situated in Arima, Trinidad.
                   </p>
                   <p className="yorke-gray leading-relaxed mb-4">
-                    After nearly four decades of operations, the company continues to provide a comprehensive structural engineering service specialising in the design, fabrication, supply and erection of steel structures and other structural components.
+                    After over five decades of operations, the company continues to provide a comprehensive structural engineering service specialising in the design, fabrication, supply and erection of steel structures and other structural components.
                   </p>
                 </div>
                 
@@ -56,7 +56,7 @@ export default function About() {
                     Yorke Structures Limited has acquired a deserved reputation within the regional construction industry and further afield for delivering quality work. A reputation for quality derived from the personal philosophy of the company's founder, Dr. Robert T. Yorke, to always strive to meet the needs of others with honesty, reliability, dependability and hard work.
                   </p>
                   <p className="yorke-gray leading-relaxed">
-                    With four decades of service behind us Yorke Structures Limited continues to regularly execute contracts in the petro-chemical, energy, industrial, commercial and municipal sectors of the construction industry with products and services being exported throughout the Caribbean.
+                    With five decades of service behind us Yorke Structures Limited continues to regularly execute contracts in the petro-chemical, energy, industrial, commercial and municipal sectors of the construction industry with products and services being exported throughout the Caribbean.
                   </p>
                 </div>
               </div>

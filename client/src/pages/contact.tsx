@@ -1,9 +1,76 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Phone, Mail, Printer, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/forms/contact-form";
 import { COMPANY_INFO } from "@/lib/constants";
+import { useEffect } from "react";
 
 export default function Contact() {
+  useEffect(() => {
+    // Load Leaflet CSS
+    const leafletCSS = document.createElement('link');
+    leafletCSS.rel = 'stylesheet';
+    leafletCSS.href = 'https://unpkg.com/leaflet/dist/leaflet.css';
+    document.head.appendChild(leafletCSS);
+
+    // Load Leaflet JS
+    const leafletJS = document.createElement('script');
+    leafletJS.src = 'https://unpkg.com/leaflet/dist/leaflet.js';
+    leafletJS.onload = () => {
+      // Initialize map after Leaflet loads
+      setTimeout(() => {
+        if ((window as any).L && document.getElementById('yorke-map')) {
+          initializeMap();
+        }
+      }, 100);
+    };
+    document.head.appendChild(leafletJS);
+
+    return () => {
+      // Cleanup
+      try {
+        if (document.head.contains(leafletCSS)) {
+          document.head.removeChild(leafletCSS);
+        }
+        if (document.head.contains(leafletJS)) {
+          document.head.removeChild(leafletJS);
+        }
+      } catch (error) {
+        console.warn('Error cleaning up map resources:', error);
+      }
+    };
+  }, []);
+
+  const initializeMap = () => {
+    try {
+      // Coordinates for O'Meara Industrial Estate, Arima, Trinidad
+      const lat = 10.6394;
+      const lng = -61.2794;
+
+      const L = (window as any).L;
+      const mapElement = document.getElementById('yorke-map');
+      
+      if (!mapElement || !L) return;
+
+      const map = L.map('yorke-map', { scrollWheelZoom: false }).setView([lat, lng], 16);
+      
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      const marker = L.marker([lat, lng]).addTo(map);
+      marker.bindPopup(`
+        <div style="text-align: center; font-family: Arial, sans-serif;">
+          <strong>Yorke Structures Limited</strong><br/>
+          Yorke Avenue<br/>
+          O'Meara Industrial Estate<br/>
+          Arima, Trinidad
+        </div>
+      `);
+    } catch (error) {
+      console.error('Error initializing map:', error);
+    }
+  };
   return (
     <div className="max-w-site mx-auto px-4 py-8">
       <div className="text-center mb-8">
@@ -45,20 +112,15 @@ export default function Contact() {
               </div>
 
               <div className="flex items-start space-x-3">
-                <Printer className="w-5 h-5 yorke-orange mt-1 flex-shrink-0" />
-                <div>
-                  <h4 className="font-semibold yorke-gray">Printer</h4>
-                  <p className="yorke-gray">{COMPANY_INFO.fax}</p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 yorke-orange mt-1 flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold yorke-gray">Address</h4>
                   <p className="yorke-gray">
-                    Trinidad and Tobago<br />
-                    Caribbean
+                    Yorke Structures Limited<br />
+                    Yorke Avenue<br />
+                    O'Meara Industrial Estate<br />
+                    Arima<br />
+                    Trinidad
                   </p>
                 </div>
               </div>
@@ -68,28 +130,24 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold yorke-gray">Business Hours</h4>
                   <p className="yorke-gray">
-                    Monday - Friday: 8:00 AM - 5:00 PM<br />
-                    Saturday: 8:00 AM - 12:00 PM<br />
-                    Sunday: Closed
+                    Monday - Friday: 8:00 AM - 4:30 PM<br />
+                    Saturday & Sunday: Closed
                   </p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Map Placeholder */}
+          {/* Interactive Map */}
           <Card className="border-yorke-border">
             <CardHeader className="yorke-dark text-white">
               <CardTitle className="text-xl">Location</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="aspect-video bg-gray-200 flex items-center justify-center">
-                <div className="text-center yorke-gray">
-                  <MapPin className="w-12 h-12 mx-auto mb-2" />
-                  <p className="text-lg font-semibold">Interactive Map</p>
-                  <p className="text-sm">Located in Trinidad and Tobago</p>
-                </div>
-              </div>
+              <div 
+                id="yorke-map" 
+                className="yorke-map leaflet-container"
+              ></div>
             </CardContent>
           </Card>
         </div>
@@ -114,7 +172,7 @@ export default function Contact() {
             <CardContent className="p-6">
               <h3 className="text-lg font-bold yorke-orange mb-3">Why Choose Yorke Structures?</h3>
               <ul className="space-y-2 text-sm yorke-gray">
-                <li>✓ 40+ years of industry experience</li>
+                <li>✓ 50+ years of industry experience</li>
                 <li>✓ BSI certified quality management</li>
                 <li>✓ Largest steel fabricating facility in the Caribbean</li>
                 <li>✓ Comprehensive project management</li>

@@ -38,7 +38,7 @@ export default function Management() {
                 <p className="font-semibold yorke-orange mb-3">Executive Chairman</p>
                 <p className="text-sm yorke-gray mb-3">D. Eng. (Hon.), CEng. FIStructE, FICE, FAPETT</p>
                 <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Our Executive Chairman brings well near 50 years' experience providing Structural Engineering services. Over forty years of this time his personal philosophy and vision has made Yorke Structures Limited the premier structural engineering services Company in the Caribbean.
+                  Our Executive Chairman brings well near 50 years' experience providing Structural Engineering services. Over fifty years of this time his personal philosophy and vision has made Yorke Structures Limited the premier structural engineering services Company in the Caribbean.
                 </p>
                 <p className="text-sm yorke-gray leading-relaxed">
                   As Executive Chairman he continues to provide valuable insight into the workings of our industry, which positions the company's operations for the future. He has said that he knew that he could not fail as he was better than his rivals, with clear goals and unwavering vision.
