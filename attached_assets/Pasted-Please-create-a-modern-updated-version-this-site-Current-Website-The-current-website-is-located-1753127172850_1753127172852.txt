@@ -1,0 +1,134 @@
+Please create a modern updated version this site
+## Current Website
+The current website is located at http://cms.yorkestructures.com/
+
+The website is built on Joomla 1.5 and requires modernization while preserving the company's brand identity and key content. The site currently uses a template called "ja_opal" with various CSS files including template.css and colors/default.css.
+
+## Company Overview
+Yorke Structures Limited is the Premier Structural Engineering and Steel Fabrication Company in the Caribbean, established in 1972. The company specializes in the fabrication, supply, and erection of steel structures and other structural components. As the market leader in the Caribbean, Yorke Structures Limited operates the largest steel fabricating facility in the region.
+
+Key features to highlight:
+- 40+ years of experience in construction projects
+- Privately held company
+- BSI certification (British Standards Institution)
+- Comprehensive structural engineering services
+- Specialization in steel fabrication
+- Operates the largest steel fabricating facility in the Caribbean
+
+## Design Requirements
+
+### Visual Style
+- Modernize while preserving brand identity
+- Color scheme: Maintain orange accents (color #C55901) and blue tones from the existing design
+- Typography: Use a clean, professional sans-serif font family
+- Maintain the Yorke Structures logo and branding elements
+- Incorporate the BSI certification logo prominently as it currently appears in the header
+
+### Navigation
+- Create an intuitive navigation menu based on the current structure:
+  - Home
+  - About Us
+    - Company Profile
+      - Robert T. Yorke
+      - Management
+      - Partners
+    - Quality Management
+      - Quality Policy
+      - HSE Policy
+      - The BSI
+    - Facility
+    - News
+  - Products & Services
+    - Products
+    - Services
+  - Projects
+  - Contact Us
+  - Other Links
+
+### Responsive Design
+- Ensure the website is fully responsive across all devices (desktop, tablet, mobile)
+- Optimize images and content for fast loading on all connections
+- Implement mobile-friendly navigation for smaller screens
+- Replace Flash content with HTML5 alternatives (currently using YouTube embeds)
+
+### Special Features to Preserve/Improve
+- Image slideshow at the top of the homepage showcasing key projects (currently using ja_slideshow2)
+- Login and user registration functionality
+- Search functionality
+- Embedded videos (currently using YouTube)
+
+## Content Requirements
+
+### Home Page
+- Maintain the slideshow featuring key projects at the top (current projects shown: M5000, Shaw Park Cultural Complex, University of Trinidad & Tobago (UTT) Omeara, Piarco International Airport)
+- Welcome section with company introduction and video
+- News section highlighting company updates
+- Clear call-to-action buttons
+- Featured sections linking to Management, Facility, and Projects pages
+- Keep the Robert T. Yorke section and Steel Fabrication video in the sidebar
+
+### About Us Section
+- Company Profile
+  - Include detailed information about the company's history since 1972
+  - Robert T. Yorke page (highlight his achievements including the Chaconia Medal Gold award)
+  - Management team information with photos
+  - Partners information
+- Quality Management
+  - Quality Policy
+  - Health, Safety and Environment (HSE) Policy
+  - The BSI certification information
+- Facility information with photos
+- News and updates section
+
+### Products & Services
+- Products section with detailed information about steel structures and components
+- Services section detailing engineering and fabrication services
+- Include high-quality images of products and services
+- Technical specifications and capabilities
+- Include videos where applicable (like the current Steel Fabrication video)
+
+### Projects
+- Showcase key projects with high-quality images
+- Organize projects by category or chronologically
+- For each project include:
+  - Multiple images showing different aspects of the project
+  - Project description
+  - Client information (when permitted)
+  - Scope of work
+  - Technical challenges and solutions
+- Feature notable projects like those in the slideshow (M5000, Shaw Park Cultural Complex, etc.)
+
+### Contact Us
+- Office address with embedded Google Map
+- Phone numbers: (868) 642-3334-5/4731/4841/4854
+- Fax: (868) 646-2572
+- Email: info@yorkestructuresltd.com
+- Contact form for inquiries
+- Business hours
+
+### Other Links
+- Maintain the current "Other Links" section with relevant industry connections
+
+## Technical Requirements
+- modern CMS or web framework
+- Implement SEO best practices for structural engineering and steel fabrication keywords
+- Fast page loading speeds (aim for <3 seconds)
+- SSL certificate implementation
+- Google Analytics integration
+- Contact form with spam protection
+- 
+
+## Assets to Preserve
+- Company logo
+- BSI certification logo
+- Project images in the slideshow
+- Videos (convert to HTML5-compatible format)
+- Content about Robert T. Yorke and his achievements
+- Contact information
+- Product and service information
+
+## Footer Information
+- Email: info@yorkestructuresltd.com
+- Phone: (868) 642-3334-5/4731/4841/4854
+- Fax: (868) 646-2572
+- Copyright notice: "Copyright © [current year] Yorke Structures Limited. All Rights Reserved."

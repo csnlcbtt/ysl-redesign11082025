@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorke Structures Limited - Premier Structural Engineering & Steel Fabrication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yorke-orange': '#C55901',
+                        'yorke-beige': '#EBEAE8',
+                        'yorke-gray': '#555555',
+                        'yorke-border': '#B9B7B5',
+                        'yorke-dark': '#333333'
+                    },
+                    fontFamily: {
+                        'sans': ['Segoe UI', 'Trebuchet MS', 'Arial', 'Helvetica', 'sans-serif']
+                    },
+                    maxWidth: {
+                        'site': '960px'
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-yorke-beige text-yorke-gray font-sans">
+    <!-- @COMPONENT: Header [logo, BSI certification, navigation] -->
+    <header id="ja-header" class="bg-white border-b border-yorke-border">
+        <div class="max-w-site mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Company Logo -->
+                <div class="flex items-center">
+                    <h1 class="logo">
+                        <a href="#" class="block">
+                            <span class="text-2xl font-bold text-yorke-orange uppercase tracking-wide">Yorke Structures Limited</span>
+                            <div class="text-sm text-yorke-gray mt-1">Premier Structural Engineering & Steel Fabrication</div>
+                        </a>
+                    </h1>
+                </div>
+                
+                <!-- BSI Certification -->
+                <div class="bsi">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=60" alt="BSI Certification" class="h-12" data-mock="true" data-implementation="Replace with actual BSI logo"/>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: MainNavigation [horizontal menu with dropdowns] -->
+    <nav id="ja-mainnav" class="bg-yorke-dark border-b border-gray-600">
+        <div class="max-w-site mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex space-x-0 text-sm">
+                    <li><a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">Home</a></li>
+                    <li class="relative group">
+                        <a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">About Us <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+                        <ul class="absolute top-full left-0 bg-white shadow-lg border border-yorke-border min-w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Company Profile</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Robert T. Yorke</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Management</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Partners</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Quality Management</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Facility</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">News</a></li>
+                        </ul>
+                    </li>
+                    <li class="relative group">
+                        <a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">Products & Services <i class="fas fa-chevron-down ml-1 text-xs"></i></a>
+                        <ul class="absolute top-full left-0 bg-white shadow-lg border border-yorke-border min-w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Products</a></li>
+                            <li><a href="#" class="block px-4 py-2 text-yorke-gray hover:bg-yorke-beige">Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">Projects</a></li>
+                    <li><a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">Contact Us</a></li>
+                    <li><a href="#" class="block px-4 py-3 text-white hover:bg-yorke-orange transition-colors">Other Links</a></li>
+                </ul>
+
+                <!-- Mobile Navigation Toggle -->
+                <button id="mobile-menu-toggle" class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <!-- Login Section -->
+                <div class="hidden md:flex items-center space-x-4 text-sm">
+                    <a href="#" class="text-white hover:text-yorke-orange transition-colors">Login</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="#" class="text-white hover:text-yorke-orange transition-colors">Register</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-yorke-dark border-t border-gray-600">
+                <ul class="py-2">
+                    <li><a href="#" class="block px-4 py-2 text-white hover:bg-yorke-orange">Home</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-white hover:bg-yorke-orange">About Us</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-white hover:bg-yorke-orange">Products & Services</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-white hover:bg-yorke-orange">Projects</a></li>
+                    <li><a href="#" class="block px-4 py-2 text-white hover:bg-yorke-orange">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: MainNavigation -->
+
+    <!-- @COMPONENT: HeroSlideshow [project showcase carousel] -->
+    <div id="hero-slideshow" class="relative h-96 overflow-hidden">
+        <div class="slide-container relative w-full h-full">
+            <!-- Slide 1: M5000 -->
+            <!-- Large-scale industrial construction project with steel framework -->
+            <div class="slide active absolute inset-0 transition-opacity duration-500" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=600'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h3 class="text-2xl font-bold mb-2">M5000</h3>
+                    <p class="text-lg">Advanced industrial steel fabrication project</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2: Shaw Park Cultural Complex -->
+            <!-- Modern cultural center with distinctive architectural steel elements -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500" style="background-image: url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=600'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h3 class="text-2xl font-bold mb-2">Shaw Park Cultural Complex</h3>
+                    <p class="text-lg">Premier cultural venue construction</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3: University of Trinidad & Tobago -->
+            <!-- Modern university building with steel structural framework -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=600'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h3 class="text-2xl font-bold mb-2">University of Trinidad & Tobago (UTT) Omeara</h3>
+                    <p class="text-lg">Educational facility structural engineering</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4: Piarco International Airport -->
+            <!-- Airport terminal with expansive steel roof structure -->
+            <div class="slide absolute inset-0 opacity-0 transition-opacity duration-500" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=600'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                <div class="absolute bottom-8 left-8 text-white">
+                    <h3 class="text-2xl font-bold mb-2">Piarco International Airport</h3>
+                    <p class="text-lg">Critical infrastructure development</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Dots -->
+        <div class="absolute bottom-4 right-8 flex space-x-2">
+            <button class="slide-dot w-3 h-3 bg-white rounded-full opacity-70 hover:opacity-100" data-slide="0"></button>
+            <button class="slide-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100" data-slide="1"></button>
+            <button class="slide-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100" data-slide="2"></button>
+            <button class="slide-dot w-3 h-3 bg-white rounded-full opacity-50 hover:opacity-100" data-slide="3"></button>
+        </div>
+    </div>
+    <!-- @END_COMPONENT: HeroSlideshow -->
+
+    <!-- Main Content Container -->
+    <div id="ja-container" class="max-w-site mx-auto px-4 py-8">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- @COMPONENT: MainContent [primary content area] -->
+            <main id="ja-content" class="lg:w-2/3">
+                <div id="ja-current-content" class="bg-white border border-yorke-border rounded-lg p-6">
+                    
+                    <!-- Welcome Section -->
+                    <section class="welcome mb-8">
+                        <h2 class="text-3xl font-bold text-yorke-gray mb-4">Welcome</h2>
+                        <div class="bg-yorke-beige border border-yorke-border rounded p-4 mb-4">
+                            <p class="text-lg leading-relaxed">Welcome to the Yorke Structures Limited Website. Yorke Structures Limited is the Premier Structural Engineering and Steel Fabrication Company in the Caribbean! We have 40 years in the construction of projects.</p>
+                            <a href="#" class="inline-block mt-2 text-yorke-orange hover:underline font-semibold">Read more.</a>
+                        </div>
+                    </section>
+
+                    <!-- News Section -->
+                    <section class="news mb-8">
+                        <h2 class="text-2xl font-bold text-yorke-orange mb-4 uppercase">News: Brief introduction and overview of YSL</h2>
+                        
+                        <div class="space-y-6">
+                            <article class="border-b border-yorke-border pb-4">
+                                <p class="text-yorke-gray leading-relaxed">We are a privately held company established in 1972 providing a comprehensive structural engineering service, specialising in the fabrication, supply and erection of steel structures and other structural components. As the market leader in the Caribbean Yorke Structures Limited operates the largest steel fabricating facility in the region.</p>
+                                <a href="#" class="text-yorke-orange hover:underline font-semibold">Read More</a>
+                            </article>
+                            
+                            <article class="border-b border-yorke-border pb-4">
+                                <p class="text-yorke-gray leading-relaxed">After 39 hard working years to keep his business, Yorke Structures Ltd thriving, Robert T. Yorke retired on January 1, 2011, though he knows it will be difficult to stay away. On the 31st August 2011 Dr. Robert T. Yorke was awarded the Chaconia Medal Gold for his long and meritorious service to Trinidad and Tobago in sphere of business.</p>
+                                <a href="#" class="text-yorke-orange hover:underline font-semibold">Read More</a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Featured Sections -->
+                    <section class="featured-sections">
+                        <div class="grid md:grid-cols-3 gap-6">
+                            
+                            <!-- Management -->
+                            <div class="text-center">
+                                <!-- Professional boardroom meeting with executives -->
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=300&h=180" alt="Management Team" class="rounded-lg shadow-lg w-full h-auto mb-3"/>
+                                <h3 class="text-lg font-bold text-yorke-gray mb-2">
+                                    <a href="#" class="hover:text-yorke-orange transition-colors">Management</a>
+                                </h3>
+                            </div>
+                            
+                            <!-- Facility -->
+                            <div class="text-center">
+                                <!-- Large steel fabrication facility with industrial equipment -->
+                                <img src="https://pixabay.com/get/g0b06823b69329a9c34989e14a67a8d74a0213f9ee760ae56e94eed35b5dc0856595b4fb512a3bf8cf30ffecbb89ac9a86483bd962b1584444b9f968f0b63bb7a_1280.jpg" alt="Steel Fabrication Facility" class="rounded-lg shadow-lg w-full h-auto mb-3"/>
+                                <h3 class="text-lg font-bold text-yorke-gray mb-2">
+                                    <a href="#" class="hover:text-yorke-orange transition-colors">Facility</a>
+                                </h3>
+                            </div>
+                            
+                            <!-- Projects -->
+                            <div class="text-center">
+                                <!-- Construction site showing steel structure assembly -->
+                                <img src="https://pixabay.com/get/g4d130bccc629770ada59e6e65127376ba53440842eded96e760a75d0bc24815d5b8014e0b26ebfcf9d1381fb2c0f7e11a0ba6b620f30576b9f541df9b8d712f1_1280.jpg" alt="Construction Projects" class="rounded-lg shadow-lg w-full h-auto mb-3"/>
+                                <h3 class="text-lg font-bold text-yorke-gray mb-2">
+                                    <a href="#" class="hover:text-yorke-orange transition-colors">Projects</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </main>
+            <!-- @END_COMPONENT: MainContent -->
+            
+            <!-- @COMPONENT: Sidebar [secondary content, login, search] -->
+            <aside id="ja-colwrap" class="lg:w-1/3">
+                <div class="space-y-6">
+                    
+                    <!-- Login Module -->
+                    <div class="moduletable bg-white border border-yorke-border rounded-lg">
+                        <h3 class="bg-yorke-dark text-white text-sm uppercase tracking-wide p-3 rounded-t-lg">Login</h3>
+                        <div class="p-4">
+                            <form>
+                                <div class="space-y-3">
+                                    <input type="text" placeholder="Username" class="w-full px-3 py-2 border border-yorke-border rounded focus:outline-none focus:border-yorke-orange">
+                                    <input type="password" placeholder="Password" class="w-full px-3 py-2 border border-yorke-border rounded focus:outline-none focus:border-yorke-orange">
+                                    <button type="submit" class="w-full bg-yorke-dark text-white py-2 rounded hover:bg-yorke-orange transition-colors">Login</button>
+                                    <div class="text-xs space-y-1">
+                                        <div><a href="#" class="text-yorke-orange hover:underline">Forgot your password?</a></div>
+                                        <div><a href="#" class="text-yorke-orange hover:underline">Forgot your username?</a></div>
+                                        <div><a href="#" class="text-yorke-orange hover:underline">Create an account</a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Robert T. Yorke Module -->
+                    <div class="moduletable bg-white border border-yorke-border rounded-lg">
+                        <h3 class="bg-yorke-dark text-white text-sm uppercase tracking-wide p-3 rounded-t-lg">Robert T. Yorke</h3>
+                        <div class="p-4 text-center">
+                            <!-- Portrait of distinguished business executive -->
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=250" alt="Robert T. Yorke" class="rounded-lg shadow-lg mx-auto mb-3 w-32 h-40 object-cover" data-mock="true"/>
+                            <a href="#" class="text-yorke-orange hover:underline font-semibold">Learn about our founder</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Steel Fabrication Video Module -->
+                    <div class="moduletable bg-white border border-yorke-border rounded-lg">
+                        <h3 class="bg-yorke-dark text-white text-sm uppercase tracking-wide p-3 rounded-t-lg">Steel Fabrication</h3>
+                        <div class="p-4">
+                            <div class="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
+                                <div class="text-center text-yorke-gray">
+                                    <i class="fas fa-play-circle text-4xl mb-2 text-yorke-orange"></i>
+                                    <p class="text-sm">Steel Fabrication Process</p>
+                                    <p class="text-xs"><!-- @FUNCTIONALITY: Video player for steel fabrication demonstration --></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Module -->
+                    <div class="moduletable bg-white border border-yorke-border rounded-lg">
+                        <h3 class="bg-yorke-dark text-white text-sm uppercase tracking-wide p-3 rounded-t-lg">Search</h3>
+                        <div class="p-4">
+                            <form>
+                                <div class="flex">
+                                    <input type="search" placeholder="Search..." class="flex-1 px-3 py-2 border border-yorke-border rounded-l focus:outline-none focus:border-yorke-orange">
+                                    <button type="submit" class="bg-yorke-dark text-white px-4 py-2 rounded-r hover:bg-yorke-orange transition-colors">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Latest News Module -->
+                    <div class="moduletable bg-white border border-yorke-border rounded-lg">
+                        <h3 class="bg-yorke-dark text-white text-sm uppercase tracking-wide p-3 rounded-t-lg">Latest News</h3>
+                        <div class="p-4">
+                            <ul class="space-y-3 text-sm">
+                                <!-- @MAP: news.map(item => ( -->
+                                <li class="border-b border-gray-200 pb-2">
+                                    <a href="#" class="text-yorke-orange hover:underline" data-bind="item.title">New Project Announcement</a>
+                                    <div class="text-xs text-gray-500 mt-1" data-bind="item.date">March 15, 2024</div>
+                                </li>
+                                <li class="border-b border-gray-200 pb-2">
+                                    <a href="#" class="text-yorke-orange hover:underline" data-bind="item.title">BSI Certification Renewal</a>
+                                    <div class="text-xs text-gray-500 mt-1" data-bind="item.date">March 10, 2024</div>
+                                </li>
+                                <li class="pb-2">
+                                    <a href="#" class="text-yorke-orange hover:underline" data-bind="item.title">Facility Expansion Complete</a>
+                                    <div class="text-xs text-gray-500 mt-1" data-bind="item.date">March 5, 2024</div>
+                                </li>
+                                <!-- @END_MAP )) -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- @END_COMPONENT: Sidebar -->
+        </div>
+    </div>
+    
+    <!-- @COMPONENT: Footer [contact info, copyright, links] -->
+    <footer id="ja-footer" class="bg-yorke-dark text-white py-8 mt-16">
+        <div class="max-w-site mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Contact Information -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-yorke-orange">Contact Information</h4>
+                    <div class="space-y-2 text-sm">
+                        <div><strong>Email:</strong> info@yorkestructuresltd.com</div>
+                        <div><strong>Phone:</strong> (868) 642-3334-5/4731/4841/4854</div>
+                        <div><strong>Fax:</strong> (868) 646-2572</div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-yorke-orange">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Products & Services</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Projects</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Quality Management</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-yorke-orange">Yorke Structures Limited</h4>
+                    <p class="text-sm leading-relaxed">The Premier Structural Engineering and Steel Fabrication Company in the Caribbean. Established 1972.</p>
+                    <div class="mt-4">
+                        <span class="inline-block">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=60&h=30" alt="BSI Certification" class="h-8" data-mock="true"/>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-600 mt-8 pt-4 text-center text-xs">
+                <p>Copyright © 2024 Yorke Structures Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Mobile menu toggle
+        (function() {
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            toggleButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        })();
+
+        // Slideshow functionality
+        (function() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.remove('opacity-0');
+                        slide.classList.add('opacity-100');
+                    } else {
+                        slide.classList.remove('opacity-100');
+                        slide.classList.add('opacity-0');
+                    }
+                });
+                
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove('opacity-50');
+                        dot.classList.add('opacity-100');
+                    } else {
+                        dot.classList.remove('opacity-100');
+                        dot.classList.add('opacity-50');
+                    }
+                });
+            }
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Auto-advance slideshow
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }, 5000);
+        })();
+
+        // Form validation placeholder
+        // TODO: Implement form validation and submission logic
+        
+        // Search functionality placeholder  
+        // TODO: Implement search functionality with backend integration
+        
+        // Dynamic content loading placeholder
+        // TODO: Implement API calls for news, projects, and other dynamic content
+    </script>
+</body>
+</html>

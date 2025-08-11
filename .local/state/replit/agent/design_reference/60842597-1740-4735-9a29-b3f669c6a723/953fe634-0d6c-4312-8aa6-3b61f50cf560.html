@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorke Structures Limited - Premier Structural Engineering & Steel Fabrication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yorke-orange': '#C55901',
+                        'yorke-blue': '#1E40AF',
+                        'yorke-light-blue': '#3B82F6'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- @COMPONENT: Header [navigation, logo, contact info] -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <!-- Top Contact Bar -->
+        <div class="bg-yorke-blue text-white py-2">
+            <div class="container mx-auto px-4 flex justify-between items-center text-sm">
+                <div class="flex items-center space-x-6">
+                    <span><i class="fas fa-phone mr-2"></i>(868) 642-3334-5</span>
+                    <span><i class="fas fa-envelope mr-2"></i>info@yorkestructuresltd.com</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="hover:text-yorke-orange transition-colors"><i class="fas fa-search"></i></button>
+                    <button class="hover:text-yorke-orange transition-colors"><i class="fas fa-user"></i> Login</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-4">
+                    <div class="text-2xl font-bold text-yorke-blue">
+                        YORKE STRUCTURES
+                        <span class="text-yorke-orange text-sm block">LIMITED</span>
+                    </div>
+                    <!-- BSI Certification Logo Placeholder -->
+                    <div class="bg-gray-200 px-3 py-2 rounded text-xs font-semibold text-gray-600">
+                        BSI CERTIFIED
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium transition-colors">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium transition-colors flex items-center">
+                            About Us <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                        <!-- Dropdown would be implemented here -->
+                    </div>
+                    <div class="relative group">
+                        <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium transition-colors flex items-center">
+                            Products & Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium transition-colors">Projects</a>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium transition-colors">Contact</a>
+                    <a href="#" class="bg-yorke-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">Get Quote</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="lg:hidden hidden mt-4 pb-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium">About Us</a>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium">Products & Services</a>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium">Projects</a>
+                    <a href="#" class="text-gray-700 hover:text-yorke-orange font-medium">Contact</a>
+                    <a href="#" class="bg-yorke-orange text-white px-4 py-2 rounded-lg text-center">Get Quote</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: HeroSlideshow [project showcases, call-to-action] -->
+    <section class="relative bg-gray-900 overflow-hidden">
+        <div class="relative h-96 md:h-[500px] lg:h-[600px]">
+            <!-- Slideshow Container -->
+            <div class="absolute inset-0" id="slideshow-container">
+                <!-- Slide 1: M5000 Project -->
+                <!-- Modern steel and glass building complex with geometric facade -->
+                <div class="absolute inset-0 bg-cover bg-center slide active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                    <div class="relative container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-2xl">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">M5000 Complex</h1>
+                            <p class="text-xl md:text-2xl mb-6 text-gray-200">State-of-the-art structural engineering showcasing our expertise in modern commercial construction.</p>
+                            <button class="bg-yorke-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                                View Project Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2: Shaw Park Cultural Complex -->
+                <!-- Cultural center with distinctive architectural features and steel framework -->
+                <div class="absolute inset-0 bg-cover bg-center slide" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                    <div class="relative container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-2xl">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Shaw Park Cultural Complex</h1>
+                            <p class="text-xl md:text-2xl mb-6 text-gray-200">Innovative cultural infrastructure combining aesthetic design with structural excellence.</p>
+                            <button class="bg-yorke-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                                Explore Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3: University of Trinidad & Tobago -->
+                <!-- Modern university campus with steel and concrete construction -->
+                <div class="absolute inset-0 bg-cover bg-center slide" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                    <div class="relative container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-2xl">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">UTT Omeara Campus</h1>
+                            <p class="text-xl md:text-2xl mb-6 text-gray-200">Educational infrastructure built to inspire learning with robust structural engineering.</p>
+                            <button class="bg-yorke-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4: Piarco International Airport -->
+                <!-- Airport terminal with expansive steel roof structure and glass walls -->
+                <div class="absolute inset-0 bg-cover bg-center slide" style="background-image: url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');">
+                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+                    <div class="relative container mx-auto px-4 h-full flex items-center">
+                        <div class="text-white max-w-2xl">
+                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Piarco International Airport</h1>
+                            <p class="text-xl md:text-2xl mb-6 text-gray-200">Critical infrastructure project demonstrating our capabilities in large-scale construction.</p>
+                            <button class="bg-yorke-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                                View Case Study
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slideshow Controls -->
+            <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slide-indicator active" data-slide="0"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slide-indicator" data-slide="1"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slide-indicator" data-slide="2"></button>
+                <button class="w-3 h-3 rounded-full bg-white bg-opacity-50 slide-indicator" data-slide="3"></button>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yorke-orange text-2xl" id="prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-yorke-orange text-2xl" id="next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSlideshow -->
+
+    <!-- @COMPONENT: WelcomeSection [company introduction, video] -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-6">
+                        <span class="text-yorke-orange font-semibold text-sm uppercase tracking-wide">Since 1972</span>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Premier Structural Engineering in the Caribbean</h2>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Yorke Structures Limited stands as the Caribbean's leading structural engineering and steel fabrication company, operating the largest steel fabricating facility in the region with over four decades of proven excellence.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yorke-orange text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">BSI Certified</h3>
+                                <p class="text-gray-600 text-sm">British Standards Institution</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yorke-blue text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Largest Facility</h3>
+                                <p class="text-gray-600 text-sm">In the Caribbean region</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yorke-orange text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">40+ Years</h3>
+                                <p class="text-gray-600 text-sm">Of expertise & experience</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-yorke-blue text-white w-10 h-10 rounded-full flex items-center justify-center">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Privately Held</h3>
+                                <p class="text-gray-600 text-sm">Independent operation</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="bg-yorke-orange hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors">
+                            Learn About Our Company
+                        </a>
+                        <a href="#" class="border-2 border-yorke-blue text-yorke-blue hover:bg-yorke-blue hover:text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors">
+                            View Our Projects
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Steel fabrication workshop with workers and machinery -->
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" alt="Steel fabrication facility" class="w-full h-auto" />
+                        <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                            <button class="bg-white bg-opacity-90 hover:bg-opacity-100 text-yorke-blue w-16 h-16 rounded-full flex items-center justify-center text-2xl transition-all">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Stats Overlay -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-6 border-l-4 border-yorke-orange">
+                        <div class="text-2xl font-bold text-gray-900">500+</div>
+                        <div class="text-gray-600 text-sm">Completed Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: WelcomeSection -->
+
+    <!-- @COMPONENT: ServicesPreview [key services showcase] -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-yorke-orange font-semibold text-sm uppercase tracking-wide">What We Do</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Comprehensive Structural Solutions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From design to completion, we provide end-to-end structural engineering and steel fabrication services across the Caribbean.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Structural Engineering -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Structural engineers working on blueprints and calculations -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Structural engineering office" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yorke-blue text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-drafting-compass text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Structural Engineering</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Professional structural design and analysis services ensuring safety, efficiency, and compliance with international standards.
+                        </p>
+                        <a href="#" class="text-yorke-orange hover:text-orange-600 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Steel Fabrication -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Steel fabrication workshop with welding and cutting equipment -->
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Steel fabrication facility" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yorke-orange text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-industry text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Steel Fabrication</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            State-of-the-art fabrication facility producing high-quality steel structures and components for diverse applications.
+                        </p>
+                        <a href="#" class="text-yorke-orange hover:text-orange-600 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Project Management -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+                    <!-- Construction site with cranes and steel structures being erected -->
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300" alt="Construction project management" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-yorke-blue text-white w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-tasks text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900">Project Management</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Complete project oversight from planning to execution, ensuring timely delivery and quality control.
+                        </p>
+                        <a href="#" class="text-yorke-orange hover:text-orange-600 font-semibold">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesPreview -->
+
+    <!-- @COMPONENT: FeaturedProjects [project showcase grid] -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-yorke-orange font-semibold text-sm uppercase tracking-wide">Portfolio</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">Featured Projects</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover some of our most significant projects that showcase our expertise in structural engineering and steel fabrication.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Project 1: Commercial Complex -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <!-- Modern commercial building with steel framework visible -->
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" alt="Commercial building project" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-bold mb-1">Commercial Complex</h3>
+                            <p class="text-sm opacity-90">Mixed-use development with innovative steel solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2: Industrial Facility -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <!-- Large industrial warehouse with exposed steel structure -->
+                        <img src="https://pixabay.com/get/g5c7c58d0a1fbb94d2b852806cc58d2ad528edb6ea814bfb9850ed0ae963eab4d41df0ec66a0eb23e61cf8c60f938c06c827716f2f642b69fb9aff4edf52bc738_1280.jpg" alt="Industrial facility project" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-bold mb-1">Industrial Facility</h3>
+                            <p class="text-sm opacity-90">Large-span manufacturing facility</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3: Bridge Infrastructure -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-xl">
+                        <!-- Steel bridge structure spanning across water or valley -->
+                        <img src="https://pixabay.com/get/g3fd75d49068a8ab2949309c1a5f16cf300b1c933d6e026b9037ab580f8a92bae2b3c7d666381f5a45183612f28501ae6_1280.jpg" alt="Bridge construction project" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                            <h3 class="text-lg font-bold mb-1">Bridge Infrastructure</h3>
+                            <p class="text-sm opacity-90">Critical transportation infrastructure</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="bg-yorke-blue hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    View All Projects
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FeaturedProjects -->
+
+    <!-- @COMPONENT: NewsSection [company updates and announcements] -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <div>
+                    <span class="text-yorke-orange font-semibold text-sm uppercase tracking-wide">Latest Updates</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Company News</h2>
+                </div>
+                <a href="#" class="hidden md:block text-yorke-blue hover:text-blue-700 font-semibold">
+                    View All News <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Article 1 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- Company executives or team members in professional setting -->
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=250" alt="Company leadership announcement" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span data-bind="news.date">March 15, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-yorke-orange transition-colors">
+                            <a href="#" data-bind="news.title">Expansion of Caribbean Operations</a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed" data-bind="news.excerpt">
+                            Yorke Structures announces significant expansion plans to serve growing demand for structural engineering services across the Caribbean region.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-yorke-orange hover:text-orange-600 font-semibold mt-4">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- News Article 2 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- Modern construction equipment and technology -->
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=250" alt="New technology implementation" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span data-bind="news.date">March 8, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-yorke-orange transition-colors">
+                            <a href="#" data-bind="news.title">New Advanced Fabrication Technology</a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed" data-bind="news.excerpt">
+                            Investment in cutting-edge fabrication equipment enhances our capacity and precision in steel structure manufacturing.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-yorke-orange hover:text-orange-600 font-semibold mt-4">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- News Article 3 -->
+                <article class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <!-- Awards ceremony or certification recognition -->
+                    <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=250" alt="Industry recognition award" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center text-sm text-gray-500 mb-3">
+                            <i class="fas fa-calendar-alt mr-2"></i>
+                            <span data-bind="news.date">February 28, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 hover:text-yorke-orange transition-colors">
+                            <a href="#" data-bind="news.title">Industry Excellence Award Recognition</a>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed" data-bind="news.excerpt">
+                            Yorke Structures receives prestigious industry award for outstanding contribution to Caribbean infrastructure development.
+                        </p>
+                        <a href="#" class="inline-flex items-center text-yorke-orange hover:text-orange-600 font-semibold mt-4">
+                            Read More <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-8 md:hidden">
+                <a href="#" class="text-yorke-blue hover:text-blue-700 font-semibold">
+                    View All News <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: NewsSection -->
+
+    <!-- @COMPONENT: Sidebar [Robert T. Yorke, Steel Fabrication Video] -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Main Content Area -->
+                <div class="lg:col-span-2">
+                    <div class="bg-yorke-blue text-white rounded-2xl p-8 md:p-12">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Next Project?</h2>
+                        <p class="text-xl mb-8 text-blue-100">
+                            Partner with the Caribbean's leading structural engineering company. Let's discuss your requirements and bring your vision to life.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#" class="bg-yorke-orange hover:bg-orange-600 text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors">
+                                Get Free Consultation
+                            </a>
+                            <a href="#" class="border-2 border-white text-white hover:bg-white hover:text-yorke-blue px-6 py-3 rounded-lg font-semibold text-center transition-colors">
+                                View Services
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="space-y-8">
+                    <!-- Robert T. Yorke Section -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Robert T. Yorke</h3>
+                        <!-- Professional portrait of company founder -->
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" alt="Robert T. Yorke, Founder" class="w-24 h-24 rounded-full object-cover mb-4" />
+                        <p class="text-gray-600 text-sm mb-4" data-mock="true">
+                            Founder and visionary leader, recipient of the prestigious Chaconia Medal Gold award for exceptional contribution to engineering excellence in Trinidad and Tobago.
+                        </p>
+                        <a href="#" class="text-yorke-orange hover:text-orange-600 font-semibold text-sm">
+                            Read Full Profile <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Steel Fabrication Video -->
+                    <div class="bg-gray-50 rounded-xl p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-4">Steel Fabrication Process</h3>
+                        <div class="relative rounded-lg overflow-hidden mb-4">
+                            <!-- Steel fabrication process in action with sparks flying -->
+                            <img src="https://pixabay.com/get/gfdd841fcc120c391ce49778cd8f7a1d145d374719c3da545391e362968572fd870733d64c1e6cfffcd3f9e4890f8cb58d83128d62b12c7a6fc1368321bd9862b_1280.jpg" alt="Steel fabrication process video thumbnail" class="w-full h-32 object-cover" />
+                            <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                                <button class="bg-white bg-opacity-90 hover:bg-opacity-100 text-yorke-blue w-12 h-12 rounded-full flex items-center justify-center text-lg transition-all">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Watch how our expert team transforms raw steel into precision-engineered structures using state-of-the-art equipment.
+                        </p>
+                        <a href="#" class="text-yorke-orange hover:text-orange-600 font-semibold text-sm">
+                            Watch Full Video <i class="fas fa-play ml-1"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Contact -->
+                    <div class="bg-yorke-orange text-white rounded-xl p-6">
+                        <h3 class="text-xl font-bold mb-4">Quick Contact</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone w-4 mr-3"></i>
+                                <span>(868) 642-3334-5</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope w-4 mr-3"></i>
+                                <span>info@yorkestructuresltd.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-clock w-4 mr-3"></i>
+                                <span>Mon-Fri: 8:00 AM - 5:00 PM</span>
+                            </div>
+                        </div>
+                        <button class="bg-white text-yorke-orange hover:bg-gray-100 w-full py-2 rounded-lg font-semibold mt-4 transition-colors">
+                            Send Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Sidebar -->
+
+    <!-- @COMPONENT: Footer [contact info, links, copyright] -->
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="mb-4">
+                        <div class="text-2xl font-bold text-white mb-2">
+                            YORKE STRUCTURES
+                            <span class="text-yorke-orange text-sm block">LIMITED</span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">
+                            The Caribbean's premier structural engineering and steel fabrication company, serving the region with excellence since 1972.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-4 mr-3 text-yorke-orange"></i>
+                            <span data-mock="true">123 Industrial Estate, Port of Spain, Trinidad and Tobago</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone w-4 mr-3 text-yorke-orange"></i>
+                            <span>(868) 642-3334-5/4731/4841/4854</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-fax w-4 mr-3 text-yorke-orange"></i>
+                            <span>(868) 646-2572</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope w-4 mr-3 text-yorke-orange"></i>
+                            <span>info@yorkestructuresltd.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Company Profile</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Management</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Quality Policy</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">HSE Policy</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Facility</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">News</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Structural Engineering</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Steel Fabrication</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Project Management</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Products</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Projects</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-yorke-orange transition-colors">Other Links</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-400">
+                    Copyright © <span data-bind="currentYear">2024</span> Yorke Structures Limited. All Rights Reserved.
+                </div>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-400">BSI Certified</span>
+                    <div class="bg-gray-700 px-3 py-1 rounded text-xs">
+                        BSI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- JavaScript for Slideshow and Mobile Menu -->
+    <script>
+        (function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // Slideshow Functionality
+            const slides = document.querySelectorAll('.slide');
+            const indicators = document.querySelectorAll('.slide-indicator');
+            const prevButton = document.getElementById('prev-slide');
+            const nextButton = document.getElementById('next-slide');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.opacity = '0';
+                });
+                
+                // Remove active class from all indicators
+                indicators.forEach(indicator => {
+                    indicator.classList.remove('active');
+                    indicator.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+                });
+                
+                // Show current slide
+                if (slides[index]) {
+                    slides[index].classList.add('active');
+                    slides[index].style.opacity = '1';
+                }
+                
+                // Activate current indicator
+                if (indicators[index]) {
+                    indicators[index].classList.add('active');
+                    indicators[index].style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                }
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+            
+            // Event listeners for navigation
+            if (nextButton) {
+                nextButton.addEventListener('click', nextSlide);
+            }
+            
+            if (prevButton) {
+                prevButton.addEventListener('click', prevSlide);
+            }
+            
+            // Event listeners for indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Auto-advance slideshow every 5 seconds
+            setInterval(nextSlide, 5000);
+            
+            // Initialize first slide
+            showSlide(0);
+            
+            // TODO: Implement business logic for contact forms, search functionality
+            // TODO: Add API calls for dynamic content loading
+            // TODO: Implement user authentication for login functionality
+            // TODO: Add Google Analytics tracking code
+            // TODO: Implement SEO optimization for structural engineering keywords
+        })();
+    </script>
+</body>
+</html>
