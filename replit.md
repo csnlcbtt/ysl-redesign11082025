@@ -82,9 +82,27 @@ The application follows a modern full-stack architecture with clear separation b
 2. Backend bundled with ESBuild to `dist/index.js`
 3. Served as static files + API routes from Express
 
+### Production Deployment
+The application is configured for production deployment with the following commands:
+- **Build**: `npm run build` - Builds both frontend and backend
+- **Start**: `npm start` - Starts the production server
+- **Production Script**: `./start-production.sh` - Complete production startup
+
+### Replit Deployment Configuration
+**Important**: The `.replit` file currently uses development mode. For proper deployment:
+1. Use Replit's deployment interface (Deploy button)
+2. The system should automatically detect the production configuration:
+   - Build command: `npm run build`
+   - Run command: `npm start`
+3. If deployment fails with "dev command" error, ensure:
+   - `NODE_ENV=production` is set
+   - The build process completes successfully
+   - Static files are served from `dist/public`
+
 ### Environment Variables
 - `DATABASE_URL`: PostgreSQL connection string (required)
 - `NODE_ENV`: Environment mode (development/production)
+- `PORT`: Server port (default: 5000)
 
 ### Key Architectural Decisions
 

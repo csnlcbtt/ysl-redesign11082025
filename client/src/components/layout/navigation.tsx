@@ -17,8 +17,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between">
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-0 text-sm">
-            {NAVIGATION_ITEMS.map((item) => (
-              <li key={item.path} className="relative group">
+            {NAVIGATION_ITEMS.map((item, index) => (
+              <li key={item.path === "#" ? `nav-${index}` : item.path} className="relative group">
                 {item.children ? (
                   <button 
                     className={`block px-4 py-3 text-white hover:bg-[hsl(25,95%,39%)] transition-colors ${
@@ -72,8 +72,8 @@ export default function Navigation() {
         {isMobileMenuOpen && (
           <div className="md:hidden yorke-dark border-t border-gray-600">
             <ul className="py-2">
-              {NAVIGATION_ITEMS.map((item) => (
-                <li key={item.path}>
+              {NAVIGATION_ITEMS.map((item, index) => (
+                <li key={item.path === "#" ? `mobile-nav-${index}` : item.path}>
                   <Link 
                     href={item.path}
                     className="block px-4 py-2 text-white hover:bg-[hsl(25,95%,39%)] transition-colors"
