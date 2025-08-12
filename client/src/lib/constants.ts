@@ -5,6 +5,12 @@ export const COMPANY_INFO = {
   email: "info@yorkestructuresltd.com",
   phone: "(868) 642-3334-5/4731/4841/4854",
   fax: "(868) 646-2572",
+  address: {
+    line1: "Lot 38 O'Meara Industrial Estate",
+    line2: "Yorke Avenue",
+    city: "Arima",
+    postalCode: "301218"
+  },
   description: "The Premier Structural Engineering and Steel Fabrication Company in the Caribbean"
 };
 
@@ -32,6 +38,12 @@ export const SLIDESHOW_PROJECTS = [
     title: "Airport Infrastructure Development",
     description: "Critical transportation and aviation facility projects",
     image: "d_640_300 (1)_1754928818589.jpg"
+  },
+  {
+    id: "skinner-park",
+    title: "Recreational Facility Construction",
+    description: "State-of-the-art recreational facility with modern steel construction",
+    image: "Skinner-Park.jpg"
   }
 ];
 
@@ -39,7 +51,7 @@ export const NAVIGATION_ITEMS = [
   { label: "Home", path: "/" },
   {
     label: "About Us",
-    path: "/about",
+    path: "#",
     children: [
       { label: "Company Profile", path: "/about" },
       { label: "Robert T. Yorke", path: "/about/robert-yorke" },
@@ -51,10 +63,10 @@ export const NAVIGATION_ITEMS = [
   },
   {
     label: "Products & Services",
-    path: "/products-services",
+    path: "#",
     children: [
-      { label: "Products", path: "/products-services/products" },
-      { label: "Services", path: "/products-services/services" }
+      { label: "Products", path: "/products" },
+      { label: "Services", path: "/services" }
     ]
   },
   { label: "Projects", path: "/projects" },

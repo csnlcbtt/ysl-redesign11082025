@@ -1,8 +1,31 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Wrench, Settings, HardHat, Shield } from "lucide-react";
+import { Wrench, Settings, HardHat, Shield, Building2, Factory, Cog } from "lucide-react";
+import SEOHead, { getServiceSchema } from "@/components/layout/seo-head";
+import facilityPhoto from "@assets/facilty_1753192297349.jpg";
 
 export default function Products() {
+  const structuralProducts = [
+    {
+      title: "Steel Structures",
+      description: "Custom-designed steel frameworks for industrial, commercial, and residential applications",
+      features: ["Industrial Buildings", "Warehouses", "Commercial Complexes", "Residential Frameworks"],
+      icon: <Building2 className="w-8 h-8" />
+    },
+    {
+      title: "Structural Components",
+      description: "High-quality steel components manufactured to precise specifications",
+      features: ["Beams & Columns", "Trusses", "Connections", "Custom Fabrications"],
+      icon: <Cog className="w-8 h-8" />
+    },
+    {
+      title: "Prefabricated Systems",
+      description: "Efficient prefabricated steel systems for rapid construction deployment",
+      features: ["Modular Buildings", "Bridge Components", "Tower Structures", "Equipment Platforms"],
+      icon: <Factory className="w-8 h-8" />
+    }
+  ];
+
   const products = [
     {
       id: "purlins",
@@ -17,7 +40,7 @@ export default function Products() {
         "Building cladding applications"
       ],
       icon: <Settings className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/purlins.jpg"
     },
     {
       id: "roof-sheets", 
@@ -33,7 +56,7 @@ export default function Products() {
         "Extended lifespan aluminum"
       ],
       icon: <Shield className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/roofing-sheet-manufacturers-in-visakhapatnam.jpg"
     },
     {
       id: "metal-decking",
@@ -49,7 +72,7 @@ export default function Products() {
         "Stud welding services"
       ],
       icon: <HardHat className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/HTB16RTdsEUIL1JjSZFrq6z3xFXaG.avif"
     },
     {
       id: "fasteners",
@@ -65,12 +88,20 @@ export default function Products() {
         "High tensile strength"
       ],
       icon: <Wrench className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/Hcb684d0d98e548abb945d78b9229cec7l.avif"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <SEOHead 
+        title="Our Products"
+        description="High-quality steel products and components for industrial, commercial, and residential applications. Steel structures, components, and prefabricated systems from Caribbean's leading fabricator."
+        keywords="steel products, steel components, prefabricated steel, steel structures trinidad, steel beams, columns, trusses"
+        type="service"
+        structuredData={getServiceSchema("Steel Products", "High-quality steel products and components for construction")}
+      />
+      
       {/* Hero Section */}
       <section className="relative py-20 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70"></div>
@@ -82,9 +113,82 @@ export default function Products() {
         </div>
       </section>
 
-      {/* Products Grid */}
+      {/* Structural Products Section */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-orange-600 mb-4">Steel Structures & Components</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              High-quality steel products manufactured in our state-of-the-art facility, 
+              the largest steel fabricating facility in the Caribbean.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {structuralProducts.map((product, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader className="text-center">
+                  <div className="mx-auto mb-4 p-3 bg-orange-600 text-white rounded-full w-fit">
+                    {product.icon}
+                  </div>
+                  <CardTitle className="text-lg text-slate-800">{product.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                    {product.description}
+                  </p>
+                  <div className="space-y-2">
+                    {product.features.map((feature, idx) => (
+                      <Badge key={idx} variant="secondary" className="mr-2 mb-2 text-xs">
+                        {feature}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Product Showcase */}
+          <Card className="border-0 shadow-lg">
+            <CardContent className="p-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-orange-600 mb-4">Steel Fabrication Excellence</h3>
+                  <p className="text-slate-700 leading-relaxed mb-6">
+                    Our products are manufactured using the latest technology and highest quality standards. 
+                    With over 50 years of experience, we deliver precision-engineered steel solutions that meet 
+                    the demanding requirements of Caribbean construction projects.
+                  </p>
+                  <ul className="space-y-3 text-sm text-slate-600">
+                    <li className="flex items-center"><span className="text-green-600 mr-2">✓</span> BSI-certified manufacturing processes</li>
+                    <li className="flex items-center"><span className="text-green-600 mr-2">✓</span> Advanced CAD/CAM technology</li>
+                    <li className="flex items-center"><span className="text-green-600 mr-2">✓</span> Rigorous quality control testing</li>
+                    <li className="flex items-center"><span className="text-green-600 mr-2">✓</span> Custom fabrication capabilities</li>
+                  </ul>
+                </div>
+                <div>
+                  <img 
+                    src={facilityPhoto} 
+                    alt="Steel Fabrication Process" 
+                    className="rounded-lg shadow-lg w-full"
+                  />
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Detailed Products Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Specialized Products</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Precision-engineered components for your construction needs
+            </p>
+          </div>
           <div className="grid lg:grid-cols-2 gap-8">
             {products.map((product) => (
               <Card key={product.id} className="border-0 shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -176,7 +280,7 @@ export default function Products() {
                   Get Quote
                 </a>
                 <a
-                  href="/products-services/services"
+                  href="/services"
                   className="inline-block bg-transparent border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
                 >
                   View Services

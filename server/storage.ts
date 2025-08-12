@@ -84,7 +84,7 @@ export class MemStorage implements IStorage {
     const sampleProjects: Project[] = [
       {
         id: this.currentProjectId++,
-        title: "M5000",
+        title: "M5000 Methanol Plant",
         description: "Advanced industrial steel fabrication project showcasing our expertise in large-scale structural engineering.",
         client: "Industrial Client",
         category: "Industrial",
@@ -125,6 +125,28 @@ export class MemStorage implements IStorage {
         imageUrl: "/api/assets/New Assets/piarco.jpg",
         isPublished: true,
         createdAt: new Date('2020-11-30')
+      },
+      {
+        id: this.currentProjectId++,
+        title: "National Centre for Oncology",
+        description: "Leading cancer treatment centre in the Caribbean islands designed by Farrow architects, spanning 7,000 m² over three storeys with cutting-edge medical equipment.",
+        client: "Urban Development Corporation",
+        category: "Healthcare",
+        year: 2024,
+        imageUrl: "/api/assets/New Assets/national_oncology_centre_0_28.png",
+        isPublished: true,
+        createdAt: new Date('2024-01-15')
+      },
+      {
+        id: this.currentProjectId++,
+        title: "Moruga Multi-Purpose Youth and Sport Facility",
+        description: "Modern sports facility with 500 seating capacity, multi-purpose field with football and cricket pitches, complete with facilities and solar-lit parking.",
+        client: "Ministry of Sport and Youth Affairs",
+        category: "Sports Facility",
+        year: 2020,
+        imageUrl: "/api/assets/New Assets/Moruga-Multi-Purpose-Youth-and-Sport-Facility-image.jpg",
+        isPublished: true,
+        createdAt: new Date('2020-08-05')
       }
     ];
 

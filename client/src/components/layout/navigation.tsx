@@ -19,15 +19,25 @@ export default function Navigation() {
           <ul className="hidden md:flex space-x-0 text-sm">
             {NAVIGATION_ITEMS.map((item) => (
               <li key={item.path} className="relative group">
-                <Link 
-                  href={item.path}
-                  className={`block px-4 py-3 text-white hover:bg-[hsl(25,95%,39%)] transition-colors ${
-                    location === item.path ? "bg-[hsl(25,95%,39%)]" : ""
-                  }`}
-                >
-                  {item.label}
-                  {item.children && <ChevronDown className="inline w-3 h-3 ml-1" />}
-                </Link>
+                {item.children ? (
+                  <button 
+                    className={`block px-4 py-3 text-white hover:bg-[hsl(25,95%,39%)] transition-colors ${
+                      location === item.path ? "bg-[hsl(25,95%,39%)]" : ""
+                    }`}
+                  >
+                    {item.label}
+                    <ChevronDown className="inline w-3 h-3 ml-1" />
+                  </button>
+                ) : (
+                  <Link 
+                    href={item.path}
+                    className={`block px-4 py-3 text-white hover:bg-[hsl(25,95%,39%)] transition-colors ${
+                      location === item.path ? "bg-[hsl(25,95%,39%)]" : ""
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
                 
                 {item.children && (
                   <ul className="absolute top-full left-0 bg-white shadow-lg border border-yorke-border min-w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">

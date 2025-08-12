@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import Slideshow from "@/components/ui/slideshow";
 import Sidebar from "@/components/ui/sidebar";
+import SEOHead, { getOrganizationSchema } from "@/components/layout/seo-head";
 import { COMPANY_INFO } from "@/lib/constants";
 import managementPhoto from "@assets/management_1753192297350.jpg";
 import facilityPhoto from "@assets/facilty_1753192297349.jpg";
@@ -15,6 +16,14 @@ export default function Home() {
 
   return (
     <div>
+      <SEOHead 
+        title="Home"
+        description={`${COMPANY_INFO.description}. Established ${COMPANY_INFO.established}. Located at ${COMPANY_INFO.address.line1}, ${COMPANY_INFO.address.line2}, ${COMPANY_INFO.address.city}.`}
+        keywords="steel fabrication, structural engineering, caribbean, trinidad, steel structures, industrial construction, yorke structures, arima"
+        type="website"
+        structuredData={getOrganizationSchema()}
+      />
+      
       {/* Hero Slideshow */}
       <Slideshow />
 

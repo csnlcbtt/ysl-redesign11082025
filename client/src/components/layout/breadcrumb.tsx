@@ -1,5 +1,6 @@
 import { useLocation } from "wouter";
 import { ChevronRight } from "lucide-react";
+import { useEffect } from "react";
 
 // Path mapping for friendly names
 const PATH_MAPPING: Record<string, string> = {
@@ -8,9 +9,8 @@ const PATH_MAPPING: Record<string, string> = {
   '/about/management': 'Management',
   '/about/facility': 'Facility',
   '/about/news': 'News',
-  '/products-services': 'Products & Services',
-  '/products-services/products': 'Products',
-  '/products-services/services': 'Services',
+  '/products': 'Products',
+  '/services': 'Services',
   '/projects': 'Projects',
   '/quality': 'Quality Management',
   '/contact': 'Contact Us'
@@ -20,6 +20,7 @@ interface BreadcrumbItem {
   label: string;
   path: string;
   current: boolean;
+  url: string;
 }
 
 // Convert hyphenated string to Title Case
@@ -32,11 +33,14 @@ function toTitleCase(str: string): string {
 
 // Generate breadcrumb items from pathname
 function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
+  const baseUrl = window.location.origin;
+  
   // Always start with Home
   const crumbs: BreadcrumbItem[] = [{
     label: 'Home',
     path: '/',
-    current: pathname === '/'
+    current: pathname === '/',
+    url: baseUrl + '/'
   }];
 
   // Skip if we're already at home
@@ -63,16 +67,60 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
     crumbs.push({
       label: label,
       path: currentPath,
-      current: isLast
+      current: isLast,
+      url: baseUrl + currentPath
     });
   });
 
   return crumbs;
 }
 
+// Generate JSON-LD structured data for breadcrumbs
+function generateBreadcrumbJsonLd(crumbs: BreadcrumbItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": crumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.label,
+      "item": crumb.url
+    }))
+  };
+}
+
 export default function Breadcrumb() {
   const [location] = useLocation();
   const crumbs = generateBreadcrumbs(location);
+
+  // Add JSON-LD structured data
+  useEffect(() => {
+    if (crumbs.length > 1) {
+      const jsonLd = generateBreadcrumbJsonLd(crumbs);
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(jsonLd);
+      script.id = 'breadcrumb-jsonld';
+      
+      // Remove existing breadcrumb JSON-LD if present
+      const existing = document.getElementById('breadcrumb-jsonld');
+      if (existing) {
+        document.head.removeChild(existing);
+      }
+      
+      document.head.appendChild(script);
+      
+      return () => {
+        try {
+          if (document.head.contains(script)) {
+            document.head.removeChild(script);
+          }
+        } catch (error) {
+          console.warn('Error removing breadcrumb JSON-LD:', error);
+        }
+      };
+    }
+  }, [crumbs]);
 
   // Only show breadcrumbs if there's more than just Home
   if (crumbs.length <= 1) {

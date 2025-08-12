@@ -1,16 +1,19 @@
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import SEOHead from "@/components/layout/seo-head";
 
 export default function Projects() {
   const { data: projects, isLoading } = useQuery({
     queryKey: ['/api/projects']
   });
 
+  const projectsArray = Array.isArray(projects) ? projects : [];
+
   if (isLoading) {
     return (
       <div className="max-w-site mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold yorke-gray mb-8 text-center">Our Projects</h1>
+        <h1 className="text-4xl font-bold yorke-gray mb-8 text-center">Featured Projects</h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[...Array(6)].map((_, i) => (
             <div key={i} className="h-80 bg-gray-200 rounded-lg animate-pulse"></div>
@@ -22,16 +25,23 @@ export default function Projects() {
 
   return (
     <div className="max-w-site mx-auto px-4 py-8">
+      <SEOHead 
+        title="Featured Projects"
+        description="Showcasing 50+ years of excellence in structural engineering and steel fabrication across the Caribbean. View our portfolio of major projects."
+        keywords="steel fabrication projects, structural engineering projects, caribbean construction, trinidad steel projects"
+        type="website"
+      />
+      
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold yorke-gray mb-4">Our Projects</h1>
+        <h1 className="text-4xl font-bold yorke-gray mb-4">Featured Projects</h1>
         <p className="text-xl yorke-gray max-w-3xl mx-auto">
           Showcasing 50+ years of excellence in structural engineering and steel fabrication across the Caribbean
         </p>
       </div>
 
-      {projects && projects.length > 0 ? (
+      {projectsArray && projectsArray.length > 0 ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project: any) => (
+          {projectsArray.map((project: any) => (
             <Card key={project.id} className="border-yorke-border overflow-hidden hover:shadow-lg transition-shadow">
               <div className="aspect-video overflow-hidden">
                 <img 
@@ -41,13 +51,8 @@ export default function Projects() {
                 />
               </div>
               <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-2">
+                <div className="mb-2">
                   <h3 className="text-lg font-bold yorke-gray">{project.title}</h3>
-                  {project.year && (
-                    <Badge variant="secondary" className="text-xs">
-                      {project.year}
-                    </Badge>
-                  )}
                 </div>
                 
                 {project.category && (

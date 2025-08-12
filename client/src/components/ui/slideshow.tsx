@@ -6,13 +6,15 @@ import projectA from "@assets/a_640_300_1754928818592.jpg";
 import projectB from "@assets/b_640_300_1754928818591.jpg"; 
 import projectC from "@assets/c_640_300_1754928818591.jpg";
 import projectD from "@assets/d_640_300 (1)_1754928818589.jpg";
+import skinnerPark from "@assets/New Assets/Skinner-Park.jpg";
 
 // Map image imports to project IDs
 const imageMap: Record<string, string> = {
   "a_640_300_1754928818592.jpg": projectA,
   "b_640_300_1754928818591.jpg": projectB,
   "c_640_300_1754928818591.jpg": projectC,
-  "d_640_300 (1)_1754928818589.jpg": projectD
+  "d_640_300 (1)_1754928818589.jpg": projectD,
+  "Skinner-Park.jpg": skinnerPark
 };
 
 export default function Slideshow() {

@@ -11,6 +11,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Serve assets from attached_assets folder
   app.use("/api/assets", express.static(path.join(process.cwd(), "attached_assets")));
   
+  // Redirects for old URLs
+  app.get('/products-services/products', (req, res) => {
+    res.redirect(301, '/products');
+  });
+
+  app.get('/products-services/services', (req, res) => {
+    res.redirect(301, '/services');
+  });
+
+  app.get('/products-services', (req, res) => {
+    res.redirect(301, '/products');
+  });
+
+  app.get('/about/quality', (req, res) => {
+    res.redirect(301, '/quality');
+  });
+  
   // Contact form submission
   app.post("/api/contact", async (req, res) => {
     try {

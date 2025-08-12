@@ -232,10 +232,15 @@
   height: 420px;
   width: 100%;
   z-index: 1;
+  background-color: #f0f0f0;
+  position: relative;
+  border: 1px solid #ddd;
 }
 
 .leaflet-container {
   font-family: inherit;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .leaflet-popup-content {

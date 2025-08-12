@@ -14,6 +14,12 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-4 yorke-orange">Contact Information</h4>
             <div className="space-y-2 text-sm">
+              <div>
+                <strong>Address:</strong><br />
+                {COMPANY_INFO.address.line1}<br />
+                {COMPANY_INFO.address.line2}<br />
+                {COMPANY_INFO.address.city} {COMPANY_INFO.address.postalCode}
+              </div>
               <div><strong>Email:</strong> {COMPANY_INFO.email}</div>
               <div><strong>Phone:</strong> {COMPANY_INFO.phone}</div>
               <div><strong>Fax:</strong> {COMPANY_INFO.fax}</div>

@@ -1,78 +1,137 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/forms/contact-form";
+import SEOHead from "@/components/layout/seo-head";
 import { COMPANY_INFO } from "@/lib/constants";
 import { useEffect } from "react";
 
 export default function Contact() {
   useEffect(() => {
+    console.log('Contact component mounted, initializing map...');
+    
     // Load Leaflet CSS
-    const leafletCSS = document.createElement('link');
-    leafletCSS.rel = 'stylesheet';
-    leafletCSS.href = 'https://unpkg.com/leaflet/dist/leaflet.css';
-    document.head.appendChild(leafletCSS);
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://unpkg.com/leaflet/dist/leaflet.css';
+    document.head.appendChild(css);
 
     // Load Leaflet JS
-    const leafletJS = document.createElement('script');
-    leafletJS.src = 'https://unpkg.com/leaflet/dist/leaflet.js';
-    leafletJS.onload = () => {
-      // Initialize map after Leaflet loads
+    const js = document.createElement('script');
+    js.src = 'https://unpkg.com/leaflet/dist/leaflet.js';
+    js.onload = () => {
+      console.log('Leaflet loaded, checking for OLC...');
+      console.log('Leaflet available:', !!(window as any).L);
+      console.log('OLC available:', !!(window as any).OpenLocationCode);
+      
+      // Wait a bit more to ensure OLC is also loaded
       setTimeout(() => {
         if ((window as any).L && document.getElementById('yorke-map')) {
+          console.log('Initializing map...');
           initializeMap();
+        } else {
+          console.error('Missing requirements for map initialization');
         }
       }, 100);
     };
-    document.head.appendChild(leafletJS);
+    document.head.appendChild(js);
 
     return () => {
-      // Cleanup
-      try {
-        if (document.head.contains(leafletCSS)) {
-          document.head.removeChild(leafletCSS);
-        }
-        if (document.head.contains(leafletJS)) {
-          document.head.removeChild(leafletJS);
-        }
-      } catch (error) {
-        console.warn('Error cleaning up map resources:', error);
-      }
+      // optional: remove nodes and destroy map if you keep a ref
     };
   }, []);
 
   const initializeMap = () => {
     try {
-      // Coordinates for O'Meara Industrial Estate, Arima, Trinidad
-      const lat = 10.6394;
-      const lng = -61.2794;
-
       const L = (window as any).L;
       const mapElement = document.getElementById('yorke-map');
       
-      if (!mapElement || !L) return;
+      if (!mapElement) {
+        console.error('Map element not found');
+        return;
+      }
 
-      const map = L.map('yorke-map', { scrollWheelZoom: false }).setView([lat, lng], 16);
+      if (!L) {
+        console.error('Leaflet not available');
+        return;
+      }
+
+      console.log('Initializing basic map...');
+
+      // Fallback coordinates (near the JP77+52J Plus Code area)
+      const lat = 10.6370;
+      const lng = -61.2825;
+
+      // Create map
+      const map = L.map("yorke-map", { 
+        scrollWheelZoom: false,
+        zoomControl: true 
+      }).setView([lat, lng], 16);
       
-      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      console.log('Map object created');
+
+      // Add tiles
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
-      
-      const marker = L.marker([lat, lng]).addTo(map);
+
+      console.log('Tiles added');
+
+      // Add marker
+      const marker = L.marker([lat, lng], { riseOnHover: true }).addTo(map);
       marker.bindPopup(`
-        <div style="text-align: center; font-family: Arial, sans-serif;">
-          <strong>Yorke Structures Limited</strong><br/>
+        <div style="text-align:center">
+          <strong>Yorke Structures Ltd</strong><br/>
+          Lot 38 O'Meara Industrial Estate<br/>
           Yorke Avenue<br/>
-          O'Meara Industrial Estate<br/>
-          Arima, Trinidad
+          Arima 301218
         </div>
       `);
+
+      console.log('Marker added');
+
+      // Ensure proper sizing
+      setTimeout(() => {
+        map.invalidateSize();
+        console.log('Map size invalidated');
+      }, 100);
+
+      // Try Plus Code enhancement if OLC is available
+      const OLC = (window as any).OpenLocationCode;
+      if (OLC) {
+        try {
+          // Use the correct Plus Code: JP77+52J
+          const fullCode = OLC.recoverNearest("JP77+52J", lat, lng);
+          const bbox = OLC.decode(fullCode);
+          const preciseLat = (bbox.latLo + bbox.latHi) / 2;
+          const preciseLng = (bbox.lngLo + bbox.lngHi) / 2;
+          
+          console.log('Plus Code coordinates:', preciseLat, preciseLng);
+          
+          // Update marker position
+          marker.setLatLng([preciseLat, preciseLng]);
+          map.setView([preciseLat, preciseLng], 17);
+          
+          console.log('Updated to Plus Code location');
+        } catch (olcError) {
+          console.warn('Plus Code error:', olcError);
+        }
+      }
+
+      console.log('Map initialized successfully');
     } catch (error) {
       console.error('Error initializing map:', error);
     }
   };
   return (
     <div className="max-w-site mx-auto px-4 py-8">
+      <SEOHead 
+        title="Contact Us"
+        description={`Get in touch with the Caribbean's premier structural engineering and steel fabrication company. Located at ${COMPANY_INFO.address.line1}, ${COMPANY_INFO.address.line2}, ${COMPANY_INFO.address.city}. Phone: ${COMPANY_INFO.phone}`}
+        keywords="contact yorke structures, steel fabrication trinidad, structural engineering contact, arima steel company"
+        type="website"
+      />
+      
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold yorke-gray mb-4">Contact Us</h1>
         <p className="text-xl yorke-gray max-w-3xl mx-auto">
@@ -116,11 +175,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-semibold yorke-gray">Address</h4>
                   <p className="yorke-gray">
-                    Yorke Structures Limited<br />
-                    Yorke Avenue<br />
-                    O'Meara Industrial Estate<br />
-                    Arima<br />
-                    Trinidad
+                    {COMPANY_INFO.address.line1}<br />
+                    {COMPANY_INFO.address.line2}<br />
+                    {COMPANY_INFO.address.city} {COMPANY_INFO.address.postalCode}
                   </p>
                 </div>
               </div>
@@ -146,7 +203,13 @@ export default function Contact() {
             <CardContent className="p-0">
               <div 
                 id="yorke-map" 
-                className="yorke-map leaflet-container"
+                className="yorke-map"
+                style={{ 
+                  height: '420px', 
+                  width: '100%', 
+                  backgroundColor: '#f0f0f0',
+                  minHeight: '420px' 
+                }}
               ></div>
             </CardContent>
           </Card>

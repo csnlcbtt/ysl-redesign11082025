@@ -1,8 +1,30 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Computer, Factory, Building2, Settings, Users, CheckCircle } from "lucide-react";
+import { Computer, Factory, Building2, Settings, Users, CheckCircle, Wrench, Truck } from "lucide-react";
+import SEOHead, { getServiceSchema } from "@/components/layout/seo-head";
 
 export default function Services() {
+  const overviewServices = [
+    {
+      title: "Structural Engineering",
+      description: "Comprehensive engineering design and analysis services",
+      features: ["Structural Design", "Load Analysis", "CAD Drafting", "3D Modeling"],
+      icon: <Settings className="w-8 h-8" />
+    },
+    {
+      title: "Steel Fabrication",
+      description: "State-of-the-art fabrication using modern equipment and techniques",
+      features: ["Cutting & Welding", "Assembly", "Quality Control", "Finishing"],
+      icon: <Wrench className="w-8 h-8" />
+    },
+    {
+      title: "Supply & Erection",
+      description: "Complete supply chain and installation services",
+      features: ["Material Supply", "Logistics", "Site Installation", "Project Management"],
+      icon: <Truck className="w-8 h-8" />
+    }
+  ];
+
   const services = [
     {
       id: "drafting-detailing",
@@ -20,7 +42,7 @@ export default function Services() {
         "Project management solutions"
       ],
       icon: <Computer className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/Easier-modeling-and-learning-with-new-user-interface-tekla-1_udvzqu.jpg"
     },
     {
       id: "fabrication",
@@ -60,12 +82,20 @@ export default function Services() {
         "Full safety protocols"
       ],
       icon: <Building2 className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+      image: "/api/assets/New Assets/2345B0BF-D7E6-40D6-90D1-F1A6841DA08D-1536x1026.jpeg"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+      <SEOHead 
+        title="Our Services"
+        description="Comprehensive steel fabrication services from design to installation, backed by 50+ years of expertise in the Caribbean construction industry. Structural engineering, fabrication, and erection services."
+        keywords="steel fabrication, structural engineering, erection services, fabrication trinidad, steel structures caribbean"
+        type="service"
+        structuredData={getServiceSchema("Steel Fabrication Services", "Comprehensive steel fabrication services from design to installation")}
+      />
+      
       {/* Hero Section */}
       <section className="relative py-20 bg-slate-900 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-slate-900/70"></div>
@@ -78,9 +108,55 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Services */}
+      {/* Services Overview */}
+      <section className="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-orange-600 mb-4">Our Services Overview</h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              From initial design through final installation, we provide comprehensive services 
+              to ensure your project's success.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {overviewServices.map((service, index) => (
+              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center mb-2">
+                    <div className="mr-3 p-2 bg-orange-600 text-white rounded">
+                      {service.icon}
+                    </div>
+                    <CardTitle className="text-lg text-slate-800">{service.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <ul className="space-y-1 text-xs text-slate-600">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx}>• {feature}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Detailed Services */}
       <section className="py-16">
-        <div className="container mx-auto px-4 space-y-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-800 mb-4">Detailed Services</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Comprehensive steel fabrication services from design to installation, 
+              backed by 50+ years of expertise in the Caribbean construction industry
+            </p>
+          </div>
+          <div className="space-y-16">
           {services.map((service, index) => (
             <div key={service.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Image */}
@@ -131,7 +207,8 @@ export default function Services() {
                 </Card>
               </div>
             </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -201,7 +278,7 @@ export default function Services() {
                   Contact Us
                 </a>
                 <a
-                  href="/products-services/products"
+                  href="/products"
                   className="inline-block bg-transparent border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
                 >
                   View Products

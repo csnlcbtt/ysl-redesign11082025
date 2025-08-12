@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas and private content
+Disallow: /admin/
+Disallow: /api/
+Disallow: /private/
+Disallow: /draft/
+Disallow: /temp/
+
+# Allow specific API endpoints that serve public content
+Allow: /api/assets/
+Allow: /api/projects
+Allow: /api/news
+
+# Sitemap location
+Sitemap: https://yorkestructuresltd.com/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
