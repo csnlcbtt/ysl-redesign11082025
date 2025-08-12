@@ -8,11 +8,20 @@ import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
-  // Health check endpoint for deployment
-  app.get("/", (req, res) => {
+  // Health check endpoint for deployment (only respond to health check requests)
+  app.get("/health", (req, res) => {
     res.status(200).json({ 
       status: "ok", 
       message: "Yorke Structures Limited - Server is running",
+      timestamp: new Date().toISOString()
+    });
+  });
+  
+  // API health check for deployment
+  app.get("/api/health", (req, res) => {
+    res.status(200).json({ 
+      status: "ok", 
+      message: "Yorke Structures Limited - API is running",
       timestamp: new Date().toISOString()
     });
   });

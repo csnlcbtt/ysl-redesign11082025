@@ -103,7 +103,9 @@ The deployment configuration has been updated to resolve Cloud Run compatibility
 
 **Recent Deployment Fixes (August 12, 2025)**:
 - Fixed server binding to use `0.0.0.0` instead of `127.0.0.1` for container compatibility
-- Added health check endpoint at root path `/` that returns JSON status response
+- ✅ **FIXED: Preview/Development Issue** - Moved health check from root path `/` to `/health` and `/api/health`
+- Root path `/` now properly serves the React application via Vite middleware in development
+- Health check endpoints still available at `/health` and `/api/health` for deployment monitoring
 - Maintains compatibility with existing frontend routing while providing deployment health checks
 
 **Deployment Steps**:
