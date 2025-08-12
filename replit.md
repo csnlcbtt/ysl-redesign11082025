@@ -89,15 +89,20 @@ The application is configured for production deployment with the following comma
 - **Production Script**: `./start-production.sh` - Complete production startup
 
 ### Replit Deployment Configuration
-**Important**: The `.replit` file currently uses development mode. For proper deployment:
-1. Use Replit's deployment interface (Deploy button)
-2. The system should automatically detect the production configuration:
-   - Build command: `npm run build`
-   - Run command: `npm start`
-3. If deployment fails with "dev command" error, ensure:
-   - `NODE_ENV=production` is set
-   - The build process completes successfully
-   - Static files are served from `dist/public`
+**Status**: ✅ **Fixed for Production Deployment**
+
+The deployment configuration has been updated in `replit.toml` to resolve the "dev command blocked" error:
+
+1. **Build Command**: Updated to array format `["npm", "run", "build"]`
+2. **Run Command**: Updated to array format `["npm", "start"]` 
+3. **Deployment Target**: Set to `autoscale` for production scaling
+4. **Environment**: `NODE_ENV=production` configured
+5. **Verified**: Both build and production start commands tested successfully
+
+**Deployment Steps**:
+1. Click the **Deploy** button in Replit interface
+2. System will automatically execute production commands
+3. Application will be served from `dist/public` with optimized assets
 
 ### Environment Variables
 - `DATABASE_URL`: PostgreSQL connection string (required)
