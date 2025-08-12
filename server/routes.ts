@@ -8,22 +8,25 @@ import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
-  // Health check endpoint for deployment (only respond to health check requests)
+  // Internal health check for deployment monitoring (not user-facing)
+  // Only responds to specific health check headers or internal monitoring
   app.get("/health", (req, res) => {
-    res.status(200).json({ 
-      status: "ok", 
-      message: "Yorke Structures Limited - Server is running",
-      timestamp: new Date().toISOString()
-    });
-  });
-  
-  // API health check for deployment
-  app.get("/api/health", (req, res) => {
-    res.status(200).json({ 
-      status: "ok", 
-      message: "Yorke Structures Limited - API is running",
-      timestamp: new Date().toISOString()
-    });
+    // Only respond to deployment health checks, not regular user requests
+    const userAgent = req.get('User-Agent') || '';
+    const isHealthCheck = userAgent.includes('GoogleHC') || 
+                         userAgent.includes('kube-probe') ||
+                         req.headers['x-health-check'] === 'true';
+    
+    if (isHealthCheck) {
+      res.status(200).json({ 
+        status: "ok", 
+        message: "Yorke Structures Limited - Server is running",
+        timestamp: new Date().toISOString()
+      });
+    } else {
+      // Regular users get 404 for health check endpoint
+      res.status(404).json({ error: "Not Found" });
+    }
   });
   
   // Serve assets from attached_assets folder
