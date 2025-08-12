@@ -91,18 +91,26 @@ The application is configured for production deployment with the following comma
 ### Replit Deployment Configuration
 **Status**: ✅ **Fixed for Production Deployment**
 
-The deployment configuration has been updated in `replit.toml` to resolve the "dev command blocked" error:
+The deployment configuration has been updated to resolve Cloud Run compatibility issues:
 
 1. **Build Command**: Updated to array format `["npm", "run", "build"]`
 2. **Run Command**: Updated to array format `["npm", "start"]` 
 3. **Deployment Target**: Set to `autoscale` for production scaling
 4. **Environment**: `NODE_ENV=production` configured
-5. **Verified**: Both build and production start commands tested successfully
+5. **Server Binding**: Changed from `127.0.0.1` to `0.0.0.0` for Cloud Run compatibility
+6. **Health Check**: Added root endpoint `/` that responds with server status
+7. **Verified**: Both build and production start commands tested successfully
+
+**Recent Deployment Fixes (August 12, 2025)**:
+- Fixed server binding to use `0.0.0.0` instead of `127.0.0.1` for container compatibility
+- Added health check endpoint at root path `/` that returns JSON status response
+- Maintains compatibility with existing frontend routing while providing deployment health checks
 
 **Deployment Steps**:
 1. Click the **Deploy** button in Replit interface
 2. System will automatically execute production commands
-3. Application will be served from `dist/public` with optimized assets
+3. Health checks will verify server is responding on root endpoint
+4. Application will be served from `dist/public` with optimized assets
 
 ### Environment Variables
 - `DATABASE_URL`: PostgreSQL connection string (required)

@@ -8,6 +8,15 @@ import express from "express";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
+  // Health check endpoint for deployment
+  app.get("/", (req, res) => {
+    res.status(200).json({ 
+      status: "ok", 
+      message: "Yorke Structures Limited - Server is running",
+      timestamp: new Date().toISOString()
+    });
+  });
+  
   // Serve assets from attached_assets folder
   app.use("/api/assets", express.static(path.join(process.cwd(), "attached_assets")));
   
