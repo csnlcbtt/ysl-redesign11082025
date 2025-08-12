@@ -1,0 +1,7 @@
+[deployment]
+build = "npm run build"
+run = "npm start"
+
+[env]
+NODE_ENV = "production"
+PORT = "5000"
