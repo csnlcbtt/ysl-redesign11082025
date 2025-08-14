@@ -123,13 +123,46 @@ export default function RobertYorke() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold yorke-orange mb-2">National Recognition</h3>
+                <h3 className="text-lg font-semibold yorke-orange mb-2">Chaconia Medal Gold Award</h3>
                 <p className="yorke-gray leading-relaxed mb-4">
-                  After 39 hard working years, Dr. Robert T. Yorke retired on January 1, 2011. On August 31, 2011, Dr. Robert T. Yorke was awarded the Chaconia Medal Gold for his long and meritorious service to Trinidad and Tobago in the sphere of business.
+                  After 39 hard working years, Dr. Robert T. Yorke retired on January 1, 2011. On August 31, 2011, Dr. Robert Theophilus Yorke was awarded the Chaconia Medal Gold in the sphere of business for long and meritorious service to Trinidad and Tobago that promotes the national welfare, or strengthens the community spirit.
                 </p>
-                <p className="yorke-gray leading-relaxed">
-                  This prestigious national award recognizes exceptional and distinguished service worthy of national recognition. The award acknowledges Dr. Yorke's outstanding contributions to engineering excellence and business leadership in Trinidad and Tobago.
-                </p>
+                
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold yorke-gray mb-2">Industry Leadership</h4>
+                    <p className="yorke-gray leading-relaxed">
+                      Dr. Yorke and Yorke Structures Limited (YSL) is the first local manufacturer of structural steel. Over the past four decades, the company has earned a reputation for high standards in its design, fabrication and erection of structural steelwork for buildings, airports, university campuses and petrochemical plants across the region. This reputation stems directly from his personal philosophy "strive to meet the needs of others with honesty, reliability, dependability and hard work."
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold yorke-gray mb-2">Energy Sector Contributions</h4>
+                    <p className="yorke-gray leading-relaxed">
+                      Dr. Yorke has very quietly and without fanfare contributed to the development of the engineering industry and instrumental in the development of the energy industry in Trinidad and Tobago. Through YSL he has been involved in the construction of the majority of the methanol, urea, ammonia, steel, iron carbide and liquefied natural gas plants erected at Point Lisas and Point Fortin.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold yorke-gray mb-2">Community Service & Education</h4>
+                    <p className="yorke-gray leading-relaxed mb-3">
+                      Robert T. Yorke is always mindful of his community role and through Yorke Structures Limited has been involved in a number of community based projects including the construction, restoration and repair works to several churches and schools throughout the region.
+                    </p>
+                    <p className="yorke-gray leading-relaxed mb-3">
+                      The company has also sponsored tuition for a number of students not only in the engineering field but also in various other related fields. Yorke Structures Limited also conducts apprentice training programmes aimed at enhancing the employment prospects of young people.
+                    </p>
+                    <p className="yorke-gray leading-relaxed">
+                      Over the last fifteen years through his company, Dr. Yorke has donated on an annual basis two prizes to the Faculty of Engineering for the "Best Level 2" Civil Engineering student and the "Most Outstanding Level 2 Student" at the University of the West Indies, St. Augustine Campus.
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold yorke-gray mb-2">Board Appointments & Advisory Roles</h4>
+                    <p className="yorke-gray leading-relaxed">
+                      Over the years he has served as a Director on several state boards including the National Gas Company, National Petroleum Company Limited and First Citizens Bank Limited. He was also the Property Advisor to the Anglican Diocese of Trinidad and Tobago.
+                    </p>
+                  </div>
+                </div>
               </div>
               
               <div>

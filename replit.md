@@ -173,6 +173,20 @@ The application maintains the original site's brand identity (orange #C55901, BS
 1. **Jacqueline Yorke Westcott**: Added BEng (Hons) Degree in Civil Engineering to bio
 2. **Khadija Bourne Murray**: Changed role from "Safety Officer" to "QHSE Manager" with updated bio
 
+### Dr. Robert T. Yorke Chaconia Gold Award Enhancement ✅ **COMPLETE**
+
+**Enhancement**: Expanded the Chaconia Medal Gold section on Dr. Robert T. Yorke's page with comprehensive details about this prestigious national award.
+
+**Additions Made:**
+- **Detailed Award Citation**: Full official recognition details from August 31, 2011
+- **Industry Leadership**: Recognition as first local structural steel manufacturer
+- **Energy Sector Impact**: Contributions to methanol, urea, ammonia, steel, and LNG plants at Point Lisas and Point Fortin
+- **Community Service**: Church and school construction projects, student sponsorship programs
+- **Educational Support**: Annual prizes to UWI Faculty of Engineering students for 15+ years
+- **Board Service**: Directorships on National Gas Company, National Petroleum Company, First Citizens Bank
+- **Advisory Roles**: Property Advisor to Anglican Diocese of Trinidad and Tobago
+- **Structured Layout**: Organized into clear subsections with proper hierarchy and styling
+
 **New Team Structure:**
 1. Dr. Robert T. Yorke - Founder
 2. Jacqueline Yorke Westcott - Executive Chairman, YSL and MIBR
