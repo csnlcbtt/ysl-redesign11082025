@@ -187,6 +187,66 @@ The application maintains the original site's brand identity (orange #C55901, BS
 - **Advisory Roles**: Property Advisor to Anglican Diocese of Trinidad and Tobago
 - **Structured Layout**: Organized into clear subsections with proper hierarchy and styling
 
+### Comprehensive Website Redesign & Visual Unification ✅ **COMPLETE**
+
+**Major Update**: Complete visual redesign implementing modern design system across all legacy pages to unify the website's visual language and improve user engagement.
+
+**Phase 1 - Modern Design Framework:**
+- **Design System**: Created comprehensive modern CSS framework with unified theme tokens
+- **Modern CSS Classes**: Implemented `.modern-page`, `.modern-container`, `.modern-card`, `.page-title`, `.section-title`, `.subsection-title` system
+- **Layout System**: Added responsive grid classes (`.two-column-grid`, `.three-column-grid`, `.alternating-grid`)
+- **Typography**: Unified heading hierarchy with consistent sizing and colors
+- **Interactive Elements**: Modern button system with hover effects and transitions
+- **Color Consistency**: Replaced beige backgrounds with clean white/light-grey throughout
+
+**Phase 2 - Page Modernization:**
+
+**About Us Page Redesign:**
+- **Background**: Changed from beige (`yorke-beige`) to modern white system
+- **Header**: Centered page title with modern typography
+- **Company Profile**: Two-column layout with professional image placement
+- **Leadership Section**: Three-column grid with clickable cards
+- **Quality Management**: Clean card-based layout with modern spacing
+
+**Quality Management Page Redesign:**
+- **Modern Cards**: Converted all sections to unified card system
+- **Typography**: Applied consistent heading hierarchy (page-title, section-title, subsection-title)
+- **Content Structure**: Improved readability with proper text colors and spacing
+- **BSI Section**: Enhanced with proper iconography and bullet formatting
+- **Responsive Design**: Mobile-first approach with proper breakpoints
+
+**Dr. Robert T. Yorke Page Redesign:**
+- **Layout**: Two-column responsive grid for biography sections
+- **Visual Hierarchy**: Consistent subsection titles and content formatting
+- **Business Ventures**: Enhanced section with two-column layout for Mount Irvine Hotel
+- **Awards Section**: Structured layout for Chaconia Gold award details
+- **Navigation**: Modern button styling for back navigation
+- **Content**: Updated all text colors to use modern gray-700 system
+
+**Technical Implementation:**
+- **CSS Framework**: Created comprehensive design system in `client/src/index.css`
+- **Component Consistency**: Replaced all legacy Card/CardHeader/CardContent with modern equivalents
+- **Responsive Grid**: Mobile-responsive with automatic column adjustment
+- **Typography Scale**: Standardized font sizes, weights, and line heights
+- **Color Palette**: Unified text colors using Tailwind gray scale
+- **Spacing System**: Consistent padding, margins, and section spacing
+- **Shadow System**: Subtle shadows for depth and modern appearance
+
+**Design Benefits:**
+- **Visual Consistency**: All pages now share identical visual language
+- **Improved Readability**: Better typography and spacing throughout
+- **Mobile Optimization**: Responsive design works seamlessly across devices
+- **Professional Appearance**: Modern, clean aesthetic matching industry standards
+- **User Experience**: Improved navigation flow and visual hierarchy
+- **Brand Cohesion**: Maintains Yorke Structures orange accent while modernizing overall look
+
+**Files Updated:**
+- `client/src/index.css` (comprehensive design system)
+- `client/src/pages/about.tsx` (complete modernization)
+- `client/src/pages/quality.tsx` (complete modernization)
+- `client/src/pages/robert-yorke.tsx` (complete modernization)
+- `client/src/pages/management.tsx` (already modern from previous update)
+
 **New Team Structure:**
 1. Dr. Robert T. Yorke - Founder
 2. Jacqueline Yorke Westcott - Executive Chairman, YSL and MIBR

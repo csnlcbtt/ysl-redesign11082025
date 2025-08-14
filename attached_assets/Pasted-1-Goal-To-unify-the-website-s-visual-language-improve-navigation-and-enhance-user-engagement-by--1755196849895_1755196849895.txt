@@ -1,0 +1,168 @@
+1. Goal
+
+To unify the website’s visual language, improve navigation, and enhance user engagement by modernizing legacy-styled pages (Management, About, Quality) so they match the clean, structured design used in the Products, Services, and Facility pages.
+
+2. Pages Targeted for Redesign
+
+About Us (/about)
+
+Management (/about/management)
+
+Dr. Robert T. Yorke (/about/robert-yorke)
+
+Quality Management (/quality)
+
+News (/about/news)
+
+Homepage (minor adjustments for branding consistency)
+
+3. Redesign Approach
+A. Visual Consistency
+
+Current issue:
+Older pages use beige backgrounds, box borders, and dated typography that break the flow of the site.
+
+Planned changes:
+
+Replace beige background with the white/very-light grey background used in modern sections.
+
+Increase section padding (top/bottom) to match Services & Products pages.
+
+Use consistent card/grid layout for people, policies, and history — like the “Featured Projects” grid style.
+
+Ensure all headings follow H1/H2 styling from modern pages (e.g., bold, sans-serif, left-aligned).
+
+B. Page-by-Page Updates
+About Us
+
+Convert “Company Profile” into two-column layout:
+Left = image, Right = text.
+Add corporate background image banner at top like Services/Products.
+
+Combine “Our History” and “Our Excellence” into a timeline or milestone section with year markers.
+
+Move “Board of Directors” and “Management Team” into clickable cards linking to bios (same style as project tiles).
+
+Management
+
+Use alternating left/right image and bio blocks (photo on one side, text on the other) for better flow.
+
+Break long bios into sections: Role & Responsibilities, Career Highlights, Qualifications, Achievements.
+
+Add company-branded accent icons (briefcase, award, diploma) before each section.
+
+Standardize image sizes and use circular or soft-rounded style to modernize.
+
+Dr. Robert T. Yorke
+
+Merge Early Life & Education with Career Foundation into a single “Career Journey” section.
+
+Replace beige background with the modern full-width white style.
+
+Use horizontal timeline for “Business Ventures & Expansion” with thumbnail images.
+
+Move “Awards & Recognition” into card format with icons for each achievement.
+
+Quality Management
+
+Split into expandable accordion sections:
+
+Quality Policy
+
+HSE Management Policy
+
+The BSI Group
+
+Commitment to Excellence
+
+Add relevant iconography for each section.
+
+Replace dense text blocks with shorter paragraphs and bullet lists for readability.
+
+News
+
+Convert to blog-style cards with image, date, headline, and “Read More” link.
+
+Use a three-column responsive grid layout like “Featured Projects”.
+
+C. Homepage Adjustments
+
+Add mission statement overlay on hero slider images.
+
+Ensure latest projects/news appear as clickable cards.
+
+Use the modern call-to-action bar from Facility page across all CTAs.
+
+D. Navigation & Usability
+
+Add breadcrumb navigation on all subpages.
+
+Make header/logo clickable to return to homepage.
+
+Enable sticky header so menu stays visible on scroll.
+
+Cross-link related content (e.g., from Services → Products, from Projects → Facility).
+
+E. Branding Enhancements
+
+Use consistent corporate orange accents for buttons, hover effects, and headings.
+
+Introduce subtle animated hover effects on cards for interactivity.
+
+Standardize button shapes and sizes (rounded corners, solid fill).
+
+F. SEO & Accessibility
+
+Add unique meta descriptions and page titles for each page.
+
+Ensure alt text for all images.
+
+Implement schema markup for:
+
+Organization
+
+Product
+
+Project
+
+Person (for management profiles)
+
+Improve internal linking between related services, products, and projects.
+
+4. Implementation Sequence
+
+Phase 1 – Design Framework
+
+Apply new header/footer, background, and typography styles to all pages.
+
+Update navigation with breadcrumbs and sticky header.
+
+Phase 2 – Content Restructuring
+
+Reformat About Us, Management, Robert Yorke, and Quality pages into modern layout.
+
+Add milestone/timeline and alternating content sections.
+
+Phase 3 – Interactive Features
+
+Implement accordions for Quality Management.
+
+Add hover animations for cards.
+
+Update News to blog-card layout.
+
+Phase 4 – SEO & Accessibility
+
+Add schema markup, alt tags, and unique meta descriptions.
+
+Compress images for faster load time.
+
+5. Expected Outcome
+
+Unified look & feel across all pages.
+
+Improved user engagement through better navigation and visual flow.
+
+Higher search engine ranking from structured data and optimized content.
+
+Stronger brand identity through consistent styling and messaging.

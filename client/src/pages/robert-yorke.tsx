@@ -7,23 +7,23 @@ import mtiHotelPhoto from "@assets/ACC_012942_TTO_12WebOriginalCompressed_175492
 
 export default function RobertYorke() {
   return (
-    <div className="yorke-beige min-h-screen">
-      <div className="max-w-site mx-auto px-4 py-8">
+    <div className="modern-page">
+      <div className="modern-container section-spacing">
         
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold yorke-gray mb-2">Dr. Robert T. Yorke</h1>
-          <p className="text-lg yorke-gray">Founder</p>
-          <p className="yorke-gray">D. Eng. (Hon.), CEng. FIStructE, FICE, FAPE</p>
+        <div className="text-center mb-12">
+          <h1 className="page-title">Dr. Robert T. Yorke</h1>
+          <p className="text-xl text-gray-600">Founder</p>
+          <p className="text-lg text-gray-500">D. Eng. (Hon.), CEng. FIStructE, FICE, FAPE</p>
         </div>
 
         {/* Biography Section */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Early Life, Education and Career Foundation</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-3 gap-8">
+        <div className="modern-card mb-8">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Early Life, Education and Career Foundation</h2>
+          </div>
+          <div className="modern-card-content">
+            <div className="two-column-grid">
               <div className="text-center">
                 <img 
                   src={robertPhoto} 
@@ -31,57 +31,57 @@ export default function RobertYorke() {
                   className="rounded-lg shadow-lg w-full mb-4"
                 />
               </div>
-              <div className="md:col-span-2 space-y-4">
+              <div className="space-y-6">
                 <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Early Life & Education</h3>
-                  <p className="yorke-gray leading-relaxed">
+                  <h3 className="subsection-title">Early Life & Education</h3>
+                  <p className="text-gray-700 leading-relaxed">
                     Dr. Robert T. Yorke was born in 1932 in Tobago, where he received his primary and secondary education as the second of eight siblings. After leaving school he completed an apprenticeship in Tobago, then moved to Trinidad to work at the Longdenville brick factory. In 1956 he left for England to pursue engineering studies at Hammersmith College, University of London, and after graduating continued professional training in the United Kingdom, working with several British engineering consultancies.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Career Foundation</h3>
-                  <p className="yorke-gray leading-relaxed">
+                  <h3 className="subsection-title">Career Foundation</h3>
+                  <p className="text-gray-700 leading-relaxed">
                     In 1967 he returned to the Caribbean as a design engineer with the Ministry of Works in Antigua. He moved back to Trinidad and Tobago in 1968 to accept the post of Chief Engineer at Sanders and Foster Caribbean Ltd. Within months he was promoted to Technical Director and soon assumed full responsibility for operations. In 1972, when Sanders and Foster exited the region, he founded Yorke Structures Ltd. He often stated that clear goals, discipline, and the willingness to make sacrifices were essential to success.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Business Philosophy & Leadership</h3>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <h3 className="subsection-title">Business Philosophy & Leadership</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     His vision for the company was guided by unshakeable confidence in his abilities and those of his team. He could clearly see his goals right from the beginning and knew that with the vision clearly in place, if he was prepared to make sacrifices to achieve those goals then nothing was impossible. This philosophy has underpinned the development of Yorke Structures Limited as a business and remains a key part of the culture of the company today.
                   </p>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     Dr. Yorke built YSL into the Caribbean's premier structural engineering consultancy through methodical planning, exacting standards, and an unwavering commitment to client satisfaction. He will tell you that Yorke Structures Limited is the best of its kind around, with no competitors, as to have competitors is to acknowledge that other people are equally as good as you. Yorke Structures Limited begins with the notion that it is better than the other companies.
                   </p>
-                  <p className="yorke-gray leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     Within the company there is great fondness and respect for Dr. Yorke, for his exceptional stewardship, integrity and guidance to the organisation and its people. He inspires awe but never fear. His patience, quiet manner and hardworking nature and his commitment to excellence have been the foundation of the company's success and leadership philosophy that emphasized both technical excellence and business acumen, establishing the foundation for YSL's continued success across multiple decades.
                   </p>
                 </div>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Business Ventures */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Business Ventures & Expansion</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
+        <div className="modern-card mb-8">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Business Ventures & Expansion</h2>
+          </div>
+          <div className="modern-card-content">
             <div className="space-y-6">
               <div>
-                <h3 className="text-lg font-semibold yorke-orange mb-2">Industrial Fastenings Limited (1975)</h3>
-                <p className="yorke-gray leading-relaxed">
+                <h3 className="subsection-title">Industrial Fastenings Limited (1975)</h3>
+                <p className="text-gray-700 leading-relaxed">
                   In order to fill a need in the country, he established Industrial Fastenings Limited in 1975, to manufacture bolts, nuts and other fasteners for the construction and oil industry. This company employs approximately 60 employees.
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="two-column-grid">
                 <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Mount Irvine Bay Hotel & Golf Club (1985)</h3>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <h3 className="subsection-title">Mount Irvine Bay Hotel & Golf Club (1985)</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     In 1985 Mr. Yorke purchased the Mount Irvine Bay Hotel and Golf Club in Tobago, from the then Malaysian owners who were divesting their interests in Trinidad and Tobago. This was notable as he was the first Tobagonian to purchase a hotel of that size. This hotel which is one of the premier hotels on the island employs over 160 persons, all citizens of Trinidad and Tobago.
                   </p>
-                  <p className="yorke-gray leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     He said Mt Irvine was a really good property and wished more citizens acquired their own land.
                   </p>
                 </div>
@@ -95,25 +95,25 @@ export default function RobertYorke() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold yorke-orange mb-2">Nu Yorke Joint Venture (2001)</h3>
-                <p className="yorke-gray leading-relaxed">
+                <h3 className="subsection-title">Nu Yorke Joint Venture (2001)</h3>
+                <p className="text-gray-700 leading-relaxed">
                   In 2001, through Mr. Yorke's initiative, Yorke Structures Limited established a joint venture with Nucor Corporation, the largest manufacturer of steel in the United States to provide engineering and detailing services for seven (7) of their divisions via electronic communication for export to the U.S. Nu Yorke was located in the Freezone in D'Abadie and employed approximately 30 persons.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Professional Recognition */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Professional Recognition & Awards</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
+        <div className="modern-card mb-8">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Professional Recognition & Awards</h2>
+          </div>
+          <div className="modern-card-content">
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-semibold yorke-orange mb-2">Professional Memberships</h3>
-                <ul className="yorke-gray space-y-1">
+                <h3 className="subsection-title">Professional Memberships</h3>
+                <ul className="text-gray-700 space-y-1">
                   <li>• Chartered Structural Engineer, registered with the Board of Engineering of Trinidad and Tobago</li>
                   <li>• Fellow of the Institution of Structural Engineers</li>
                   <li>• Fellow of the Institution of Civil Engineers</li>
@@ -130,35 +130,35 @@ export default function RobertYorke() {
                 
                 <div className="space-y-4">
                   <div>
-                    <h4 className="font-semibold yorke-gray mb-2">Industry Leadership</h4>
-                    <p className="yorke-gray leading-relaxed">
+                    <h4 className="font-semibold text-gray-700 mb-2">Industry Leadership</h4>
+                    <p className="text-gray-700 leading-relaxed">
                       Dr. Yorke and Yorke Structures Limited (YSL) is the first local manufacturer of structural steel. Over the past four decades, the company has earned a reputation for high standards in its design, fabrication and erection of structural steelwork for buildings, airports, university campuses and petrochemical plants across the region. This reputation stems directly from his personal philosophy "strive to meet the needs of others with honesty, reliability, dependability and hard work."
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold yorke-gray mb-2">Energy Sector Contributions</h4>
-                    <p className="yorke-gray leading-relaxed">
+                    <h4 className="font-semibold text-gray-700 mb-2">Energy Sector Contributions</h4>
+                    <p className="text-gray-700 leading-relaxed">
                       Dr. Yorke has very quietly and without fanfare contributed to the development of the engineering industry and instrumental in the development of the energy industry in Trinidad and Tobago. Through YSL he has been involved in the construction of the majority of the methanol, urea, ammonia, steel, iron carbide and liquefied natural gas plants erected at Point Lisas and Point Fortin.
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold yorke-gray mb-2">Community Service & Education</h4>
-                    <p className="yorke-gray leading-relaxed mb-3">
+                    <h4 className="font-semibold text-gray-700 mb-2">Community Service & Education</h4>
+                    <p className="text-gray-700 leading-relaxed mb-3">
                       Robert T. Yorke is always mindful of his community role and through Yorke Structures Limited has been involved in a number of community based projects including the construction, restoration and repair works to several churches and schools throughout the region.
                     </p>
-                    <p className="yorke-gray leading-relaxed mb-3">
+                    <p className="text-gray-700 leading-relaxed mb-3">
                       The company has also sponsored tuition for a number of students not only in the engineering field but also in various other related fields. Yorke Structures Limited also conducts apprentice training programmes aimed at enhancing the employment prospects of young people.
                     </p>
-                    <p className="yorke-gray leading-relaxed">
+                    <p className="text-gray-700 leading-relaxed">
                       Over the last fifteen years through his company, Dr. Yorke has donated on an annual basis two prizes to the Faculty of Engineering for the "Best Level 2" Civil Engineering student and the "Most Outstanding Level 2 Student" at the University of the West Indies, St. Augustine Campus.
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold yorke-gray mb-2">Board Appointments & Advisory Roles</h4>
-                    <p className="yorke-gray leading-relaxed">
+                    <h4 className="font-semibold text-gray-700 mb-2">Board Appointments & Advisory Roles</h4>
+                    <p className="text-gray-700 leading-relaxed">
                       Over the years he has served as a Director on several state boards including the National Gas Company, National Petroleum Company Limited and First Citizens Bank Limited. He was also the Property Advisor to the Anglican Diocese of Trinidad and Tobago.
                     </p>
                   </div>
@@ -166,20 +166,20 @@ export default function RobertYorke() {
               </div>
               
               <div>
-                <h3 className="text-lg font-semibold yorke-orange mb-2">Honorary Doctorate</h3>
-                <p className="yorke-gray leading-relaxed">
+                <h3 className="subsection-title">Honorary Doctorate</h3>
+                <p className="text-gray-700 leading-relaxed">
                   Dr. Yorke was awarded an Honorary Doctorate in Engineering, recognizing his lifetime achievements in structural engineering and his significant contributions to the development of engineering practice in the Caribbean region.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Navigation */}
         <div className="text-center mt-8">
           <Link 
             href="/about" 
-            className="inline-block bg-yorke-orange text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition-colors"
+            className="modern-button"
           >
             Back to About Us
           </Link>

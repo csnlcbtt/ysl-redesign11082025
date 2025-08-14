@@ -8,26 +8,26 @@ import companyPhoto from "@assets/b2_1754924928463.jpg";
 
 export default function About() {
   return (
-    <div className="max-w-site mx-auto px-4 py-8">
-      <div className="space-y-8">
+    <div className="modern-page">
+      <div className="modern-container section-spacing">
         
         {/* Page Header */}
-        <div className="text-center">
-          <h1 className="text-4xl font-bold yorke-gray mb-4">About Yorke Structures Limited</h1>
-          <p className="text-xl yorke-gray max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="page-title">About Yorke Structures Limited</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             {COMPANY_INFO.description} since {COMPANY_INFO.established}
           </p>
         </div>
 
         {/* Company Profile */}
-        <Card className="border-yorke-border">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Company Profile</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-3 gap-8">
+        <div className="modern-card mb-12">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Company Profile</h2>
+          </div>
+          <div className="modern-card-content">
+            <div className="two-column-grid">
               {/* Company Image */}
-              <div className="md:col-span-1">
+              <div>
                 <img 
                   src={companyPhoto} 
                   alt="Yorke Structures Management Team" 
@@ -36,42 +36,42 @@ export default function About() {
               </div>
               
               {/* Company Content */}
-              <div className="md:col-span-2 space-y-6">
+              <div className="space-y-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 yorke-orange">Our History</h3>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <h3 className="subsection-title">Our History</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     Yorke Structures Limited was established on July 31, 1972 by Dr. Robert T. Yorke and commenced business with 10 employees. Today the company employs over 250 people and operates the largest steel fabrication facility in the Caribbean, situated in Arima, Trinidad.
                   </p>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <p className="text-gray-700 leading-relaxed">
                     After over five decades of operations, the company continues to provide a comprehensive structural engineering service specialising in the design, fabrication, supply and erection of steel structures and other structural components.
                   </p>
                 </div>
                 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 yorke-orange">Our Excellence</h3>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <h3 className="subsection-title">Our Excellence</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     Contracts are regularly executed in the petro-chemical, energy, marine, industrial, commercial and municipal sectors of the construction industry with products and services being exported throughout the Caribbean. Yorke Structures Limited is a pioneer in the Caribbean in its chosen field.
                   </p>
-                  <p className="yorke-gray leading-relaxed mb-4">
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     Yorke Structures Limited has acquired a deserved reputation within the regional construction industry and further afield for delivering quality work. A reputation for quality derived from the personal philosophy of the company's founder, Dr. Robert T. Yorke, to always strive to meet the needs of others with honesty, reliability, dependability and hard work.
                   </p>
-                  <p className="yorke-gray leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     With five decades of service behind us Yorke Structures Limited continues to regularly execute contracts in the petro-chemical, energy, industrial, commercial and municipal sectors of the construction industry with products and services being exported throughout the Caribbean.
                   </p>
                 </div>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Key Personnel */}
-        <Card className="border-yorke-border">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Key Personnel</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Founder Photo */}
+        <div className="modern-card mb-12">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Leadership Team</h2>
+          </div>
+          <div className="modern-card-content">
+            <div className="three-column-grid">
+              {/* Founder */}
               <div className="text-center">
                 <img 
                   src={robertPhoto} 
@@ -141,15 +141,15 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Quality Management */}
-        <Card className="border-yorke-border">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Quality Management</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
+        <div className="modern-card mb-12">
+          <div className="modern-card-header">
+            <h2 className="section-title text-white m-0">Quality Management</h2>
+          </div>
+          <div className="modern-card-content">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <img 
@@ -193,8 +193,8 @@ export default function About() {
                 </Link>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );
