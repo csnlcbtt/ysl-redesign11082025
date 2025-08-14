@@ -1,243 +1,329 @@
-import { Link } from "wouter";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useEffect } from "react";
+import { ExternalLink } from "lucide-react";
 import robertPhoto from "@assets/robert (2)_1754929566552.jpg";
 import simonPhoto from "@assets/simon_1754929566552.jpg";
-import lauraPhoto from "@assets/laura2_1754929566551.jpg";
-import hermanPhoto from "@assets/herman_1754929566551.jpg";
 import kenPhoto from "@assets/ken_1754929566550.jpg";
-import lizPhoto from "@assets/liz_1754929566549.jpg";
-import rameshPhoto from "@assets/ramesh_1754929566549.jpg";
-import donnaPhoto from "@assets/donna_1754929566547.jpg";
 
 export default function Management() {
+  useEffect(() => {
+    document.title = "Management - Yorke Structures Limited";
+  }, []);
+
   return (
-    <div className="yorke-beige min-h-screen">
-      <div className="max-w-site mx-auto px-4 py-8">
-        
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold yorke-gray mb-2">Management Team</h1>
-          <p className="text-lg yorke-gray">Leadership Excellence in Structural Engineering</p>
+    <div className="min-h-screen bg-white">
+
+      <style>{`
+        :root {
+          --ysl-ink: #1A1A1A;
+          --ysl-muted: #6A6F76;
+          --ysl-border: #E6E8EB;
+          --ysl-bg: #FFFFFF;
+
+          --role-founder: #7A3E00;
+          --role-exec: #004F6E;
+          --role-md: #2C3E50;
+          --role-contracts: #5B3A8E;
+          --role-safety: #1B6E20;
+
+          --badge-bg: #F5F7FA;
+          --badge-text: #1A1A1A;
+        }
+
+        @media (prefers-color-scheme: dark) {
+          :root {
+            --ysl-bg: #0E1012;
+            --ysl-ink: #F2F4F7;
+            --ysl-muted: #9AA3AE;
+            --ysl-border: #2A2F36;
+            --badge-bg: #1A1F24;
+            --badge-text: #F2F4F7;
+          }
+        }
+
+        .management-card {
+          background: var(--ysl-bg);
+          border: 1px solid var(--ysl-border);
+          border-radius: 8px;
+          overflow: hidden;
+          margin-bottom: 3rem;
+        }
+
+        .card-content {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          gap: 2rem;
+          padding: 2rem;
+          align-items: center;
+        }
+
+        .card-content.reverse {
+          grid-template-columns: 2fr 1fr;
+        }
+
+        .card-portrait {
+          width: 100%;
+          max-width: 300px;
+          aspect-ratio: 4/5;
+          object-fit: cover;
+          border-radius: 8px;
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-text {
+          padding: 1rem 0;
+        }
+
+        .card-text h2 {
+          font-size: 1.875rem;
+          font-weight: 700;
+          color: var(--ysl-ink);
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.025em;
+        }
+
+        .card-text .qualifications {
+          color: var(--ysl-muted);
+          font-size: 0.875rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .card-text .bio {
+          color: var(--ysl-ink);
+          line-height: 1.7;
+          font-size: 1rem;
+        }
+
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          font-size: 0.875rem;
+          padding: 0.25rem 0.6rem;
+          border-radius: 999px;
+          background: var(--badge-bg);
+          color: var(--badge-text);
+          border: 1px solid var(--ysl-border);
+          gap: 0.4rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .badge::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+        }
+
+        .badge--founder::before { background: var(--role-founder); }
+        .badge--exec::before { background: var(--role-exec); }
+        .badge--md::before { background: var(--role-md); }
+        .badge--contracts::before { background: var(--role-contracts); }
+        .badge--safety::before { background: var(--role-safety); }
+
+        .card--founder .card-text { border-left: 3px solid var(--role-founder); padding-left: 1rem; }
+        .card--exec .card-text { border-right: 3px solid var(--role-exec); padding-right: 1rem; }
+        .card--md .card-text { border-left: 3px solid var(--role-md); padding-left: 1rem; }
+        .card--contracts .card-text { border-right: 3px solid var(--role-contracts); padding-right: 1rem; }
+        .card--safety .card-text { border-left: 3px solid var(--role-safety); padding-left: 1rem; }
+
+        .linkedin-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #0066cc;
+          text-decoration: none;
+          font-weight: 500;
+          margin-top: 1rem;
+          padding: 0.5rem 0;
+          border-radius: 4px;
+          transition: all 0.2s;
+        }
+
+        .linkedin-link:hover {
+          color: #004499;
+          text-decoration: underline;
+        }
+
+        .linkedin-link:focus {
+          outline: 2px solid #0066cc;
+          outline-offset: 2px;
+        }
+
+        @media (max-width: 768px) {
+          .card-content,
+          .card-content.reverse {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+          
+          .card-portrait {
+            max-width: 250px;
+            margin: 0 auto;
+          }
+
+          .card--founder .card-text,
+          .card--exec .card-text,
+          .card--md .card-text,
+          .card--contracts .card-text,
+          .card--safety .card-text {
+            border: none;
+            padding: 1rem 0;
+          }
+        }
+      `}</style>
+
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* Page Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4">Management</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Leadership excellence driving structural engineering innovation across the Caribbean for over five decades.
+          </p>
         </div>
 
-        {/* Executive Leadership */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Executive Leadership</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              {/* Dr. Robert T. Yorke */}
-              <div className="text-center">
-                <img 
-                  src={robertPhoto} 
-                  alt="Dr. Robert T. Yorke" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-48 h-48 object-cover"
-                />
-                <h3 className="text-xl font-bold yorke-gray mb-2">Dr. Robert T. Yorke</h3>
-                <p className="font-semibold yorke-orange mb-3">Executive Chairman</p>
-                <p className="text-sm yorke-gray mb-3">D. Eng. (Hon.), CEng. FIStructE, FICE, FAPETT</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Our Executive Chairman brings well near 50 years' experience providing Structural Engineering services. Over fifty years of this time his personal philosophy and vision has made Yorke Structures Limited the premier structural engineering services Company in the Caribbean.
+        {/* Dr. Robert T. Yorke - Founder (Image Left) */}
+        <div className="management-card card--founder">
+          <div className="card-content">
+            <div>
+              <img 
+                src={robertPhoto} 
+                alt="Dr. Robert T. Yorke, Founder of Yorke Structures Limited"
+                className="card-portrait"
+              />
+            </div>
+            <div className="card-text">
+              <h2>Dr. Robert T. Yorke</h2>
+              <div className="qualifications">D.Eng. (Hon.), CEng, FIStructE, FICE, FAPETT</div>
+              <div className="badge badge--founder">Founder</div>
+              <div className="bio">
+                <p className="mb-4">
+                  Dr. Robert T. Yorke, Founder of Yorke Structures Ltd, devoted nearly fifty years to advancing structural engineering in the Caribbean. His personal philosophy and vision transformed YSL into the region's premier structural engineering services company. As Founder, he provided guidance that shaped the company's direction, upheld the highest standards, and positioned the business for continued success.
                 </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  As Executive Chairman he continues to provide valuable insight into the workings of our industry, which positions the company's operations for the future. He has said that he knew that he could not fail as he was better than his rivals, with clear goals and unwavering vision.
-                </p>
-              </div>
-
-              {/* Simon H. Westcott */}
-              <div className="text-center">
-                <img 
-                  src={simonPhoto} 
-                  alt="Simon H. Westcott" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-48 h-48 object-cover"
-                />
-                <h3 className="text-xl font-bold yorke-gray mb-2">Simon H. Westcott</h3>
-                <p className="font-semibold yorke-orange mb-3">General Manager & Board Member</p>
-                <p className="text-sm yorke-gray mb-3">BSc (Hons) C.Eng, MBA, MICE, MAPETT, FIStructE</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Simon holds an Honours Degree in Civil Engineering and a Masters Degree in Business Administration. He is a Chartered Member of the Institution of Civil Engineers and a Chartered Fellow of Institution of Structural Engineers.
-                </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  With over 25 years of engineering experience across Africa, Asia, Europe and the USA, Simon has responsibility for all strategic and operational functions of the company, including project management, contract administration, and setting company policy and strategic direction.
+                <p>
+                  Known for his clarity of vision, he maintained that success required seeing goals clearly, making the necessary sacrifices, and never losing focus. His legacy is one of excellence, leadership, and unwavering commitment to the profession. Dr. Yorke's influence remains deeply embedded in the culture and values of the company he built.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        {/* Senior Management */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Senior Management</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Laura Cozier */}
-              <div className="text-center">
-                <img 
-                  src={lauraPhoto} 
-                  alt="Laura Cozier" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Laura Cozier</h3>
-                <p className="font-semibold yorke-orange mb-3">Director Corporate Services</p>
-                <p className="text-sm yorke-gray mb-3">B.A. Economics, Executive M.B.A. (UWI)</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Laura has responsibility for Corporate Affairs, Human Resources and Information Technology. She brings the meticulous diligence of her many years within the banking sector to our operations.
+        {/* Jacqueline Yorke Westcott - Executive Chairman (Image Right) */}
+        <div className="management-card card--exec">
+          <div className="card-content reverse">
+            <div className="card-text">
+              <h2>Jacqueline Yorke Westcott</h2>
+              <div className="qualifications">SHRM-SCP</div>
+              <div className="badge badge--exec">Executive Chairman, YSL and MIBR</div>
+              <div className="bio">
+                <p className="mb-4">
+                  Jacqueline Yorke Westcott brings over eighteen years' expertise in organizational development and human resources management. As Executive Chairman of Yorke Structures Ltd and Mount Irvine Bay Hotel Ltd, she oversees governance, strategy, culture, and long-term growth. Her career includes senior roles in corporate training, intercultural consultancy, and executive coaching, with specialisation in recruitment, talent management, and succession planning.
                 </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  With over 25 years in the financial sector, including 7 years as Head of Corporate Banking, Treasury and International Trade, Laura guides YSL's financial strategy and talent management initiatives.
-                </p>
-              </div>
-
-              {/* Herman Pereira */}
-              <div className="text-center">
-                <img 
-                  src={hermanPhoto} 
-                  alt="Herman Pereira" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Herman Pereira</h3>
-                <p className="font-semibold yorke-orange mb-3">Financial Controller</p>
-                <p className="text-sm yorke-gray mb-3">ACCA Qualified</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Herman joined Yorke Structures Limited at its inception as a payroll clerk and has risen steadily through the ranks to Financial Controller, responsible for accounting and administrative functions.
-                </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  He controls the financial resources of the company and manages an administrative staff of around fifteen people. Herman clearly enjoys both the responsibilities and challenges of his work, recognizing communication as a key aspect of his role.
+                <p>
+                  A SHRM Senior Certified Professional, Jacqueline holds advanced qualifications in leadership and organizational change. She is committed to building people systems that enhance performance, safety, and service excellence. Her leadership approach integrates strategic oversight with a strong focus on staff engagement, ensuring that YSL continues to grow while preserving its reputation for quality and integrity.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Operations Management */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Operations Management</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Kenneth Prince */}
-              <div className="text-center">
-                <img 
-                  src={kenPhoto} 
-                  alt="Kenneth Prince" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Kenneth Prince</h3>
-                <p className="font-semibold yorke-orange mb-3">Contracts Administrator</p>
-                <p className="text-sm yorke-gray mb-3">CIOB Member, ACPS Associate</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  A UK citizen working in Trinidad for 15 years, Kenneth has frontline responsibility for operational management, coordination and general execution of all projects since joining YSL in 2000.
-                </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  His expertise has been instrumental in managing major projects including Atlantic LNG Trains 2 & 3, M5000 Methanol Plant, UTT Campuses, and The Waterfront Project, ensuring all contractual obligations are met with high professionalism.
-                </p>
+            <div>
+              <div className="card-portrait bg-gray-200 flex items-center justify-center text-gray-500">
+                Profile Photo
               </div>
+            </div>
+          </div>
+        </div>
 
-              {/* Elizabeth Saunders */}
-              <div className="text-center">
-                <img 
-                  src={lizPhoto} 
-                  alt="Elizabeth Saunders" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Elizabeth Saunders</h3>
-                <p className="font-semibold yorke-orange mb-3">Quality Coordinator</p>
-                <p className="text-sm yorke-gray mb-3">Engineer (UWI), ISO 9001 & OSHAS 18001 Lead Auditor</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Elizabeth joined YSL in 2001, graduating as an Engineer from UWI in 1987. She became a Certified Lead Auditor in ISO Quality Management Systems in 1998 and expanded to OSHAS 18001 Systems in 2003.
+        {/* Simon H. Westcott - Managing Director (Image Left) */}
+        <div className="management-card card--md">
+          <div className="card-content">
+            <div>
+              <img 
+                src={simonPhoto} 
+                alt="Simon H. Westcott, Managing Director of Yorke Structures Limited"
+                className="card-portrait"
+              />
+            </div>
+            <div className="card-text">
+              <h2>Simon H. Westcott</h2>
+              <div className="qualifications">BSc (Hons), CEng, MBA, MICE, MAPETT, FIStructE</div>
+              <div className="badge badge--md">Managing Director</div>
+              <div className="bio">
+                <p className="mb-4">
+                  Simon Westcott is a Chartered Civil and Structural Engineer with nearly forty years' experience delivering complex projects across the Caribbean, UK, Africa, and Asia. As Managing Director and a member of the Board, he leads YSL's strategic and operational direction, covering project management, contract administration, commercial performance, and business development.
                 </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  She guided the organization through the transition from ISO 9002:1994 to current ISO 9001:2008 certification, bringing unique perspective for operationalizing quality management systems in YSL's production-oriented environment.
+                <p>
+                  He previously served as Contracts Manager at YSL, successfully managing major projects and liaising closely with all stakeholders. His professional affiliations include the Institution of Civil Engineers, the Institution of Structural Engineers, and A.P.E.T.T. Simon is known for disciplined cost control, efficient delivery, and sustaining client value while driving growth in the company's services and market presence.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        {/* Technical Operations */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Technical Operations</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Ramesh Maharaj */}
-              <div className="text-center">
-                <img 
-                  src={rameshPhoto} 
-                  alt="Ramesh Maharaj" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Ramesh Maharaj</h3>
-                <p className="font-semibold yorke-orange mb-3">Drawing Office Supervisor</p>
-                <p className="text-sm yorke-gray mb-3">Company Associate Since 1972</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Ramesh has been associated with the company since its inception in 1972, beginning as Assistant Chief Draughtsman. Today he manages and supervises all operations within the drawing office.
+        {/* Kenneth Prince - Contracts Administrator (Image Right) */}
+        <div className="management-card card--contracts">
+          <div className="card-content reverse">
+            <div className="card-text">
+              <h2>Kenneth Prince</h2>
+              <div className="qualifications">MCIOB</div>
+              <div className="badge badge--contracts">Contracts Administrator</div>
+              <div className="bio">
+                <p className="mb-4">
+                  Kenneth Prince has served as Contracts Administrator at Yorke Structures Ltd since 2000, bringing extensive expertise in site-based execution, contractual compliance, quantity surveying, and value management. A UK citizen, he has worked in Trinidad for over fifteen years, delivering on major projects such as Atlantic LNG Trains 2 and 3, M5000 Methanol Plant, UTT campuses, and the Waterfront Project.
                 </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  He has witnessed the profound shift from drawing boards to computer aided drafting and design, bringing additional capacity and flexibility to the company. Ramesh relishes the challenges of his detailed and methodical work, fitting superbly in the high-pressure environment.
-                </p>
-              </div>
-
-              {/* Donna Greenidge */}
-              <div className="text-center">
-                <img 
-                  src={donnaPhoto} 
-                  alt="Donna Greenidge" 
-                  className="rounded-lg shadow-lg mx-auto mb-4 w-40 h-40 object-cover"
-                />
-                <h3 className="text-lg font-bold yorke-gray mb-2">Donna Greenidge</h3>
-                <p className="font-semibold yorke-orange mb-3">Executive Assistant to Executive Chairman</p>
-                <p className="text-sm yorke-gray mb-3">Advisor, Confidante & Public Relations</p>
-                <p className="text-sm yorke-gray leading-relaxed mb-4">
-                  Donna manages an extremely hectic job with calm and cheerful efficiency. Her role encompasses advisor, confidante, public relations officer and personal assistant, supporting Dr. Yorke's hands-on management approach.
-                </p>
-                <p className="text-sm yorke-gray leading-relaxed">
-                  She filters and prioritizes workload and telephone calls, dealing quickly and effectively with the output of an extremely active executive. Donna has a clear vision of why YSL is the best in its field, believing it's achieved through teamwork with honesty, initiative and hard work.
+                <p>
+                  A Member of the Chartered Institute of Building and Associate of Cost and Production Surveyors, Kenneth's professional knowledge ensures that YSL consistently meets contractual obligations and maintains the highest standards in project delivery. His focus on professionalism, efficiency, and client satisfaction continues to strengthen YSL's position in the regional construction industry.
                 </p>
               </div>
             </div>
-          </CardContent>
-        </Card>
-
-        {/* Team Philosophy */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Our Management Philosophy</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="space-y-4 yorke-gray">
-              <p className="leading-relaxed">
-                The management team at Yorke Structures Limited brings together decades of combined experience in structural engineering, project management, quality assurance, and business administration. Our leadership philosophy is rooted in Dr. Robert T. Yorke's founding principles of excellence, integrity, and unwavering commitment to quality.
-              </p>
-              <p className="leading-relaxed">
-                Each member of our management team exemplifies our core values of professional excellence, continuous improvement, and collaborative teamwork. From our Executive Chairman's visionary leadership to our technical specialists' operational expertise, we maintain the highest standards in everything we do.
-              </p>
-              <p className="leading-relaxed">
-                Our management structure ensures comprehensive oversight of all aspects of our operations - from strategic planning and financial management to quality control and project execution. This integrated approach has positioned Yorke Structures Limited as the premier structural engineering company in the Caribbean.
-              </p>
+            <div>
+              <img 
+                src={kenPhoto} 
+                alt="Kenneth Prince, Contracts Administrator of Yorke Structures Limited"
+                className="card-portrait"
+              />
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
-        {/* Navigation */}
-        <div className="text-center">
-          <Link 
+        {/* Khadija Bourne Murray - Safety Officer (Image Left) */}
+        <div className="management-card card--safety">
+          <div className="card-content">
+            <div>
+              <div className="card-portrait bg-gray-200 flex items-center justify-center text-gray-500">
+                Profile Photo
+              </div>
+            </div>
+            <div className="card-text">
+              <h2>Khadija Bourne Murray</h2>
+              <div className="qualifications">NEBOSH Certified, ISO 14001, 45001, 9001</div>
+              <div className="badge badge--safety">Safety Officer</div>
+              <div className="bio">
+                <p className="mb-4">
+                  Khadija Bourne Murray is a Safety Officer specialising in Occupational and Environmental Health and Safety. She is NEBOSH-certified and trained in ISO 14001, 45001, and 9001 management systems. Khadija leads the development and implementation of workplace safety policies, supports training and investigations, and ensures compliance with all HSE regulations.
+                </p>
+                <p>
+                  Her career spans HSE research, environmental consultancy, and forestry safety projects, giving her a broad perspective on risk management. Dedicated to fostering a proactive safety culture, she works closely with operational teams to improve safety performance and reduce workplace hazards. Khadija's approach combines technical expertise with a commitment to continuous improvement and employee well-being.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Navigation */}
+        <div className="text-center mt-16 pt-8 border-t border-gray-200">
+          <a 
             href="/about" 
-            className="inline-block bg-[hsl(25,95%,39%)] text-white px-6 py-3 rounded hover:bg-[hsl(25,95%,35%)] transition-colors font-semibold mr-4"
+            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 transition-colors font-semibold mr-4"
           >
             Back to About Us
-          </Link>
-          <Link 
+          </a>
+          <a 
             href="/about/robert-yorke" 
-            className="inline-block border border-[hsl(25,95%,39%)] text-[hsl(25,95%,39%)] px-6 py-3 rounded hover:bg-[hsl(25,95%,39%)] hover:text-white transition-colors font-semibold"
+            className="inline-block border border-orange-600 text-orange-600 px-8 py-3 rounded-lg hover:bg-orange-600 hover:text-white transition-colors font-semibold"
           >
             Learn About Our Founder
-          </Link>
+          </a>
         </div>
       </div>
     </div>

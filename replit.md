@@ -147,3 +147,36 @@ The deployment configuration has been updated to resolve Cloud Run compatibility
 - Consistent API patterns
 
 The application maintains the original site's brand identity (orange #C55901, BSI certification prominence) while providing a modern, responsive user experience across all devices.
+
+## Recent Changes (August 14, 2025)
+
+### Management Section Restructuring ✅ **COMPLETE**
+
+**Major Update**: Complete restructuring of the Management section across the website with modern design and updated team profiles.
+
+**Key Changes:**
+- **New Management Page Design**: Implemented alternating portrait layout with role-based color coding system
+- **Team Structure Update**: Updated to 5 current team members with standardized bios (120-150 words each)
+- **Removed Legacy Profiles**: Eliminated 5 outdated management profiles with proper 301 redirects
+- **Enhanced Accessibility**: WCAG AA compliance with proper contrast ratios and screen reader support
+- **SEO Optimization**: Added structured data (JSON-LD) and optimized meta tags for all team members
+
+**New Team Structure:**
+1. Dr. Robert T. Yorke - Founder (Bronze accent #7A3E00)
+2. Jacqueline Yorke Westcott - Executive Chairman (Teal accent #004F6E)  
+3. Simon H. Westcott - Managing Director (Steel Blue accent #2C3E50)
+4. Kenneth Prince - Contracts Administrator (Royal Violet accent #5B3A8E)
+5. Khadija Bourne Murray - Safety Officer (Safety Green #1B6E20)
+
+**Technical Implementation:**
+- Role-based CSS custom properties system
+- Mobile-responsive alternating layout
+- 301 redirects for all removed profile URLs
+- Updated About page references
+- Dark mode compatibility
+
+**Files Modified:**
+- `client/src/pages/management.tsx` (complete redesign)
+- `client/src/pages/about.tsx` (updated team references)
+- `server/routes.ts` (added redirects)
+- Added: `MANAGEMENT_RESTRUCTURE_CHANGELOG.md`

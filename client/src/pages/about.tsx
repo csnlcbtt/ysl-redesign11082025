@@ -96,43 +96,39 @@ export default function About() {
                 <h4 className="font-semibold yorke-orange mb-4 text-lg">Board of Directors</h4>
                 <div className="space-y-3">
                   <div>
-                    <h5 className="font-semibold yorke-gray">Simon Westcott</h5>
-                    <p className="text-sm yorke-gray">General Manager, Structural Engineer</p>
+                    <h5 className="font-semibold yorke-gray">Dr. Robert T. Yorke</h5>
+                    <p className="text-sm yorke-gray">Founder & Chairman Emeritus</p>
                   </div>
                   <div>
-                    <h5 className="font-semibold yorke-gray">Laura Cozier</h5>
-                    <p className="text-sm yorke-gray">Corporate Services Director</p>
+                    <h5 className="font-semibold yorke-gray">Jacqueline Yorke Westcott</h5>
+                    <p className="text-sm yorke-gray">Executive Chairman, <span className="yorke-orange">SHRM-SCP</span></p>
                   </div>
                   <div>
-                    <h5 className="font-semibold yorke-gray">Robert T. Yorke</h5>
-                    <p className="text-sm yorke-gray">Executive Chairman, Structural Engineer</p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold yorke-gray">Jacqueline Yorke-Westcott</h5>
-                    <p className="text-sm yorke-gray">Civil Engineer, <span className="yorke-orange">Organizational Development Consultant</span></p>
+                    <h5 className="font-semibold yorke-gray">Simon H. Westcott</h5>
+                    <p className="text-sm yorke-gray">Managing Director, Chartered Engineer</p>
                   </div>
                 </div>
               </div>
               
               {/* Management */}
               <div>
-                <h4 className="font-semibold yorke-orange mb-4 text-lg">Management</h4>
+                <h4 className="font-semibold yorke-orange mb-4 text-lg">Management Team</h4>
                 <div className="space-y-3">
                   <div>
-                    <h5 className="font-semibold yorke-gray">Robert Yorke</h5>
+                    <h5 className="font-semibold yorke-gray">Jacqueline Yorke Westcott</h5>
                     <p className="text-sm yorke-gray">Executive Chairman</p>
                   </div>
                   <div>
-                    <h5 className="font-semibold yorke-gray">Simon Westcott</h5>
-                    <p className="text-sm yorke-gray">General Manager</p>
+                    <h5 className="font-semibold yorke-gray">Simon H. Westcott</h5>
+                    <p className="text-sm yorke-gray">Managing Director</p>
                   </div>
                   <div>
-                    <h5 className="font-semibold yorke-gray">Laura Cozier</h5>
-                    <p className="text-sm yorke-gray">Director of Corporate Services</p>
+                    <h5 className="font-semibold yorke-gray">Kenneth Prince</h5>
+                    <p className="text-sm yorke-gray">Contracts Administrator</p>
                   </div>
                   <div>
-                    <h5 className="font-semibold yorke-gray">Herman Pereira</h5>
-                    <p className="text-sm yorke-gray">Financial Controller</p>
+                    <h5 className="font-semibold yorke-gray">Khadija Bourne Murray</h5>
+                    <p className="text-sm yorke-gray">Safety Officer</p>
                   </div>
                 </div>
                 <div className="mt-4">
@@ -140,7 +136,7 @@ export default function About() {
                     href="/about/management" 
                     className="yorke-orange hover:underline font-semibold text-sm"
                   >
-                    More on Management
+                    Meet Our Leadership Team
                   </Link>
                 </div>
               </div>

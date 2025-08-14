@@ -48,6 +48,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get('/about/quality', (req, res) => {
     res.redirect(301, '/quality');
   });
+
+  // Redirects for removed management profiles
+  app.get('/about/management/laura-cozier', (req, res) => {
+    res.redirect(301, '/about/management');
+  });
+
+  app.get('/about/management/herman-pereira', (req, res) => {
+    res.redirect(301, '/about/management');
+  });
+
+  app.get('/about/management/elizabeth-saunders', (req, res) => {
+    res.redirect(301, '/about/management');
+  });
+
+  app.get('/about/management/ramesh-maharaj', (req, res) => {
+    res.redirect(301, '/about/management');
+  });
+
+  app.get('/about/management/donna-greenidge', (req, res) => {
+    res.redirect(301, '/about/management');
+  });
   
   // Contact form submission
   app.post("/api/contact", async (req, res) => {

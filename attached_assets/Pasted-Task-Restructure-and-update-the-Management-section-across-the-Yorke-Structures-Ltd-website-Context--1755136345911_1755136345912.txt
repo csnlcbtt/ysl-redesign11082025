@@ -1,0 +1,232 @@
+Task: Restructure and update the Management section across the Yorke Structures Ltd website
+Context
+
+Management page uses a full-width white content area with a centered page title “Management.”
+
+Profiles appear in a stacked vertical layout, each as a two-column block with a portrait and a text biography.
+
+Update the layout so portraits alternate left and right down the page for visual balance.
+
+Text elements per card: Name in bold uppercase, qualifications, role title, concise multi-paragraph bio.
+
+Maintain formal tone and post-nominals. Shorten bios and standardize style.
+
+Objectives
+
+Keep the two-column portrait and biography layout, but alternate portrait position left or right for each profile.
+
+Replace outdated profiles and add the new ones.
+
+Standardize tone, titles, and length.
+
+Add role-based colour accents and badges as described below.
+
+Apply SEO, accessibility, and structured data improvements.
+
+Update all templates and pages that surface leadership info.
+
+Remove from site
+
+Delete bios, thumbnails, index entries, and any internal links for:
+
+Laura Cozier
+
+Herman Pereira
+
+Elizabeth Saunders
+
+Ramesh Maharaj
+
+Donna Greenidge
+
+Ensure these names no longer appear in Management, About, homepage leadership highlights, footer snippets, team JSON, sitemap titles, and any legacy pages. Add 301 redirects from removed profile URLs to /about/profile/management/.
+
+Add and update profiles
+
+Use the merged bios below. Target 120 to 150 words each. Link each name to LinkedIn where available.
+
+1) Dr. Robert T. Yorke, D.Eng. (Hon.), CEng, FIStructE, FICE, FAPETT — Founder
+
+Dr. Robert T. Yorke, Founder of Yorke Structures Ltd, devoted nearly fifty years to advancing structural engineering in the Caribbean. His personal philosophy and vision transformed YSL into the region’s premier structural engineering services company. As Founder, he provided guidance that shaped the company’s direction, upheld the highest standards, and positioned the business for continued success.
+Known for his clarity of vision, he maintained that success required seeing goals clearly, making the necessary sacrifices, and never losing focus. His legacy is one of excellence, leadership, and unwavering commitment to the profession. Dr. Yorke’s influence remains deeply embedded in the culture and values of the company he built.
+
+2) Jacqueline Yorke Westcott, SHRM-SCP — Executive Chairman, YSL and MIBR
+
+Jacqueline Yorke Westcott brings over eighteen years’ expertise in organizational development and human resources management. As Executive Chairman of Yorke Structures Ltd and Mount Irvine Bay Hotel Ltd, she oversees governance, strategy, culture, and long-term growth. Her career includes senior roles in corporate training, intercultural consultancy, and executive coaching, with specialisation in recruitment, talent management, and succession planning.
+A SHRM Senior Certified Professional, Jacqueline holds advanced qualifications in leadership and organizational change. She is committed to building people systems that enhance performance, safety, and service excellence. Her leadership approach integrates strategic oversight with a strong focus on staff engagement, ensuring that YSL continues to grow while preserving its reputation for quality and integrity.
+
+3) Simon H. Westcott, BSc (Hons), CEng, MBA, MICE, MAPETT, FIStructE — Managing Director
+
+Simon Westcott is a Chartered Civil and Structural Engineer with nearly forty years’ experience delivering complex projects across the Caribbean, UK, Africa, and Asia. As Managing Director and a member of the Board, he leads YSL’s strategic and operational direction, covering project management, contract administration, commercial performance, and business development.
+He previously served as Contracts Manager at YSL, successfully managing major projects and liaising closely with all stakeholders. His professional affiliations include the Institution of Civil Engineers, the Institution of Structural Engineers, and A.P.E.T.T. Simon is known for disciplined cost control, efficient delivery, and sustaining client value while driving growth in the company’s services and market presence.
+
+4) Kenneth Prince, MCIOB — Contracts Administrator
+
+Kenneth Prince has served as Contracts Administrator at Yorke Structures Ltd since 2000, bringing extensive expertise in site-based execution, contractual compliance, quantity surveying, and value management. A UK citizen, he has worked in Trinidad for over fifteen years, delivering on major projects such as Atlantic LNG Trains 2 and 3, M5000 Methanol Plant, UTT campuses, and the Waterfront Project.
+A Member of the Chartered Institute of Building and Associate of Cost and Production Surveyors, Kenneth’s professional knowledge ensures that YSL consistently meets contractual obligations and maintains the highest standards in project delivery. His focus on professionalism, efficiency, and client satisfaction continues to strengthen YSL’s position in the regional construction industry.
+
+5) Khadija Bourne Murray — Safety Officer
+
+Khadija Bourne Murray is a Safety Officer specialising in Occupational and Environmental Health and Safety. She is NEBOSH-certified and trained in ISO 14001, 45001, and 9001 management systems. Khadija leads the development and implementation of workplace safety policies, supports training and investigations, and ensures compliance with all HSE regulations.
+Her career spans HSE research, environmental consultancy, and forestry safety projects, giving her a broad perspective on risk management. Dedicated to fostering a proactive safety culture, she works closely with operational teams to improve safety performance and reduce workplace hazards. Khadija’s approach combines technical expertise with a commitment to continuous improvement and employee well-being.
+
+Layout and design rules
+
+Keep stacked sections and alternate image positions:
+
+Founder image left, text right
+
+Executive Chairman image right, text left
+
+Managing Director image left, text right
+
+Contracts Administrator image right, text left
+
+Safety Officer image left, text right
+
+Portrait specifications: 600 x 750 JPG, optimized under 120 KB, file names firstname-lastname-ysl.jpg, alt text includes full name and role.
+
+Maintain generous vertical spacing and consistent alignment.
+
+Use bold uppercase for names, role titles in sentence case, qualifications after the name.
+
+Role-based colour accents and badges
+
+Add small, consistent visual accents for quick scanning. Keep all colours accessible.
+
+Tokens
+
+Define CSS variables at the component root:
+
+:root {
+  --ysl-ink: #1A1A1A;
+  --ysl-muted: #6A6F76;
+  --ysl-border: #E6E8EB;
+  --ysl-bg: #FFFFFF;
+
+  --role-founder: #7A3E00;         /* deep bronze */
+  --role-exec: #004F6E;            /* deep teal */
+  --role-md: #2C3E50;              /* steel blue */
+  --role-contracts: #5B3A8E;       /* royal violet */
+  --role-safety: #1B6E20;          /* safety green */
+
+  --badge-bg: #F5F7FA;
+  --badge-text: #1A1A1A;
+}
+
+Badge pattern
+
+Place a compact pill badge under the name that reads the role.
+
+Badge uses neutral background with a left border rule in the role colour.
+
+Example class:
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--ysl-border);
+  gap: 0.4rem;
+}
+.badge::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.badge--founder::before { background: var(--role-founder); }
+.badge--exec::before { background: var(--role-exec); }
+.badge--md::before { background: var(--role-md); }
+.badge--contracts::before { background: var(--role-contracts); }
+.badge--safety::before { background: var(--role-safety); }
+
+Side rule accent
+
+Add a thin left or right border on the text column that matches the role colour.
+
+Apply border to the side opposite the portrait for balance.
+
+.card--founder .card-text { border-left: 3px solid var(--role-founder); padding-left: 1rem; }
+.card--exec .card-text { border-right: 3px solid var(--role-exec); padding-right: 1rem; }
+.card--md .card-text { border-left: 3px solid var(--role-md); padding-left: 1rem; }
+.card--contracts .card-text { border-right: 3px solid var(--role-contracts); padding-right: 1rem; }
+.card--safety .card-text { border-left: 3px solid var(--role-safety); padding-left: 1rem; }
+
+Accessibility
+
+Confirm text to background contrast meets WCAG AA.
+
+Ensure focus states for linked names and LinkedIn icons are visible.
+
+Provide aria-labels like aria-label="LinkedIn profile for Simon H. Westcott".
+
+Light and dark handling
+
+If the site supports dark mode, invert backgrounds and use the same role colours.
+
+Example:
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ysl-bg: #0E1012;
+    --ysl-ink: #F2F4F7;
+    --ysl-muted: #9AA3AE;
+    --ysl-border: #2A2F36;
+    --badge-bg: #1A1F24;
+    --badge-text: #F2F4F7;
+  }
+}
+
+SEO and structured data
+
+Add JSON-LD Person for each profile: name, jobTitle, worksFor, sameAs for LinkedIn, image, short description.
+
+Update page title, meta description, and Open Graph tags.
+
+Link About page, homepage highlights, and footer to each profile anchor.
+
+Site-wide updates
+
+Replace management references across templates, PDF brochures, and staff arrays.
+
+Remove old images and purge CDN cache.
+
+Regenerate sitemap and submit to search engines.
+
+Accessibility and QA
+
+Heading hierarchy: H1 page title, H2 per profile.
+
+All images have descriptive alt text.
+
+Verify responsive layout and image aspect on mobile and desktop.
+
+Deliverables
+
+Updated Management page with alternating portrait positions and five profiles in this order: Founder, Executive Chairman, Managing Director, Contracts Administrator, Safety Officer.
+
+Removed legacy profiles with redirects.
+
+Updated structured data and meta tags.
+
+Change log of URLs, images, and assets modified.
+
+Release notes summarizing removals and additions.
+
+Acceptance criteria
+
+Portraits alternate left and right in the final layout.
+
+Removed profiles do not appear anywhere.
+
+Bios match the merged content above and length targets.
+
+Structured data validates without errors.
+
+Internal search returns only updated profiles.
