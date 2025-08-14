@@ -79,7 +79,7 @@ export default function About() {
                   className="rounded-lg shadow-lg mx-auto mb-4 w-48 h-48 object-cover"
                 />
                 <h3 className="text-lg font-bold yorke-gray mb-2">Dr. Robert T. Yorke</h3>
-                <p className="text-sm yorke-gray mb-3">Founder & Chairman Emeritus</p>
+                <p className="text-sm yorke-gray mb-3">Founder</p>
                 <p className="text-sm yorke-gray leading-relaxed">
                   After 39 hard working years, Dr. Robert T. Yorke retired on January 1, 2011. On August 31, 2011, Dr. Robert T. Yorke was awarded the Chaconia Medal Gold for his long and meritorious service to Trinidad and Tobago in the sphere of business.
                 </p>
@@ -97,7 +97,7 @@ export default function About() {
                 <div className="space-y-3">
                   <div>
                     <h5 className="font-semibold yorke-gray">Dr. Robert T. Yorke</h5>
-                    <p className="text-sm yorke-gray">Founder & Chairman Emeritus</p>
+                    <p className="text-sm yorke-gray">Founder</p>
                   </div>
                   <div>
                     <h5 className="font-semibold yorke-gray">Jacqueline Yorke Westcott</h5>

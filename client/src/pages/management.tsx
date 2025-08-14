@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 import robertPhoto from "@assets/robert (2)_1754929566552.jpg";
 import simonPhoto from "@assets/simon_1754929566552.jpg";
 import kenPhoto from "@assets/ken_1754929566550.jpg";
@@ -91,16 +94,16 @@ export default function Management() {
 
   return (
     <div className="yorke-beige min-h-screen">
-      {/* Simple breadcrumb without component dependency */}
+      {/* Breadcrumb matching About page */}
       <div className="ysl-bc">
         <div className="max-w-6xl mx-auto px-4">
           <nav className="ysl-bc-list">
             <span className="ysl-bc-item">
-              <a href="/" className="ysl-bc-link">Home</a>
+              <Link href="/" className="ysl-bc-link">Home</Link>
             </span>
             <span className="ysl-bc-separator">/</span>
             <span className="ysl-bc-item">
-              <a href="/about" className="ysl-bc-link">About</a>
+              <Link href="/about" className="ysl-bc-link">About</Link>
             </span>
             <span className="ysl-bc-separator">/</span>
             <span className="ysl-bc-item">
@@ -111,9 +114,9 @@ export default function Management() {
       </div>
       
       <div className="management">
-        <div className="container">
-          <h1>Management</h1>
-          <p style={{ color: 'var(--ysl-muted)', marginBottom: '32px', fontSize: '18px' }}>
+        <div className="container max-w-6xl mx-auto px-4 py-8">
+          <h1 className="text-3xl font-bold yorke-gray mb-6">Management</h1>
+          <p className="text-lg yorke-gray mb-8 max-w-4xl">
             Leadership excellence driving structural engineering innovation across the Caribbean for over five decades.
           </p>
 
@@ -122,71 +125,53 @@ export default function Management() {
             const imageSrc = getImageSrc(leader.slug);
             
             return (
-              <div key={leader.slug} className={`card ${isAlt ? 'alt' : ''}`}>
-                {/* Portrait */}
-                <div className="portrait">
-                  {imageSrc ? (
-                    <img 
-                      src={imageSrc}
-                      alt={`${leader.name}, ${leader.role} of Yorke Structures Limited`}
-                    />
-                  ) : (
-                    <div 
-                      style={{
-                        width: '100%',
-                        height: '520px',
-                        backgroundColor: '#f5f5f5',
-                        borderRadius: 'var(--ysl-radius)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'var(--ysl-muted)',
-                        fontSize: '14px'
-                      }}
-                    >
-                      Profile Photo
+              <Card key={leader.slug} className={`mb-8 border-yorke-border management-card ${isAlt ? 'alt' : ''}`}>
+                <CardContent className="p-6">
+                  <div className={`grid gap-6 ${isAlt ? 'md:grid-cols-[1.2fr,1fr]' : 'md:grid-cols-[1fr,1.2fr]'}`}>
+                    {/* Portrait */}
+                    <div className={`${isAlt ? 'md:order-2' : ''}`}>
+                      {imageSrc ? (
+                        <img 
+                          src={imageSrc}
+                          alt={`${leader.name}, ${leader.role} of Yorke Structures Limited`}
+                          className="w-full h-[520px] md:h-[520px] object-cover rounded-md shadow-sm"
+                        />
+                      ) : (
+                        <div className="w-full h-[520px] bg-gray-100 rounded-md flex items-center justify-center text-gray-500 text-sm">
+                          Profile Photo
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className="content">
-                  <h2>{leader.name}</h2>
-                  <div className="quals">{leader.quals}</div>
-                  <div className="role-badge">{leader.role}</div>
-                  <div style={{ 
-                    color: 'var(--ysl-ink)', 
-                    lineHeight: '1.6', 
-                    fontSize: '16px',
-                    marginTop: '12px'
-                  }}>
-                    {leader.bio}
+                    
+                    {/* Content */}
+                    <div className={`space-y-4 ${isAlt ? 'md:order-1' : ''}`}>
+                      <div>
+                        <h2 className="text-xl font-bold yorke-gray mb-2">{leader.name}</h2>
+                        <p className="text-sm text-gray-600 mb-1">{leader.quals}</p>
+                        <p className="text-gray-700 font-medium">{leader.role}</p>
+                      </div>
+                      <div className="yorke-gray leading-relaxed">
+                        {leader.bio}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             );
           })}
 
           {/* Navigation */}
-          <div style={{ textAlign: 'center', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid var(--ysl-border)' }}>
-            <a 
-              href="/about" 
-              className="btn"
-              style={{ marginRight: '16px' }}
-            >
-              Back to About Us
-            </a>
-            <a 
-              href="/about/robert-yorke" 
-              className="btn"
-              style={{ 
-                background: 'transparent',
-                color: 'var(--ysl-accent)',
-                border: '1px solid var(--ysl-accent)'
-              }}
-            >
-              Learn About Our Founder
-            </a>
+          <div className="text-center mt-12 pt-8 border-t border-yorke-border space-x-4">
+            <Link href="/about">
+              <Button className="bg-yorke-orange hover:bg-opacity-90 text-white">
+                Back to About Us
+              </Button>
+            </Link>
+            <Link href="/about/robert-yorke">
+              <Button variant="outline" className="border-yorke-orange text-yorke-orange hover:bg-yorke-orange hover:text-white">
+                Learn About Our Founder
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

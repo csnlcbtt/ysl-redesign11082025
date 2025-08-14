@@ -152,31 +152,45 @@ The application maintains the original site's brand identity (orange #C55901, BS
 
 ### Management Section Restructuring ✅ **COMPLETE**
 
-**Major Update**: Complete restructuring of the Management section across the website with modern design and updated team profiles.
+**Major Update**: Complete restructuring and alignment of the Management section across the website with unified styling and updated team profiles.
 
-**Key Changes:**
-- **New Management Page Design**: Implemented alternating portrait layout with role-based color coding system
-- **Team Structure Update**: Updated to 5 current team members with standardized bios (120-150 words each)
-- **Removed Legacy Profiles**: Eliminated 5 outdated management profiles with proper 301 redirects
-- **Enhanced Accessibility**: WCAG AA compliance with proper contrast ratios and screen reader support
-- **SEO Optimization**: Added structured data (JSON-LD) and optimized meta tags for all team members
+**Task A - Management Page Alignment:**
+- **Adopted About Page Styling**: Used identical container, grid, cards, buttons, and breadcrumb components
+- **Unified Theme Tokens**: Added global CSS custom properties for consistency
+- **Background**: Changed to #fff with proper shadows (0 1px 3px rgba(0,0,0,.08)) and borders
+- **Cards**: 1px solid #e8eaed border, 6px radius, professional styling
+- **Alternating Layout**: Maintained left-right-left-right-left portrait pattern
+- **Responsive Design**: Mobile-friendly with proper image scaling (520px desktop, 380px mobile)
+
+**Task B - Dr. Robert T. Yorke Biography Update:**
+- **Section Merger**: Combined "Career & Business Foundation" into "Early Life & Education"
+- **New Section Title**: "Early Life, Education and Career Foundation"
+- **Content Integration**: Merged biography with chronological flow from 1932-1972
+- **Title Standardization**: Changed from "Founder & Chairman Emeritus" to "Founder" site-wide
+- **Section Removal**: Deleted duplicate "Career & Business Foundation" section
+
+**Task C - Content Updates:**
+1. **Jacqueline Yorke Westcott**: Added BEng (Hons) Degree in Civil Engineering to bio
+2. **Khadija Bourne Murray**: Changed role from "Safety Officer" to "QHSE Manager" with updated bio
 
 **New Team Structure:**
-1. Dr. Robert T. Yorke - Founder (Bronze accent #7A3E00)
-2. Jacqueline Yorke Westcott - Executive Chairman (Teal accent #004F6E)  
-3. Simon H. Westcott - Managing Director (Steel Blue accent #2C3E50)
-4. Kenneth Prince - Contracts Administrator (Royal Violet accent #5B3A8E)
-5. Khadija Bourne Murray - Safety Officer (Safety Green #1B6E20)
+1. Dr. Robert T. Yorke - Founder
+2. Jacqueline Yorke Westcott - Executive Chairman, YSL and MIBR
+3. Simon H. Westcott - Managing Director
+4. Kenneth Prince - Contracts Administrator
+5. Khadija Bourne Murray - QHSE Manager
 
 **Technical Implementation:**
-- Role-based CSS custom properties system
-- Mobile-responsive alternating layout
-- 301 redirects for all removed profile URLs
-- Updated About page references
-- Dark mode compatibility
+- **Unified Theme Tokens**: Added YSL CSS custom properties for site-wide consistency
+- **Component Integration**: Reused About page Card, Button, Link components from shadcn/ui
+- **Data Centralization**: Created `/data/leadership.json` as single source of truth with fallback data
+- **Mobile-responsive**: CSS Grid with alternating column arrangements
+- **Accessibility**: Proper alt text, heading structure, and navigation
 
 **Files Modified:**
-- `client/src/pages/management.tsx` (complete redesign)
-- `client/src/pages/about.tsx` (updated team references)
-- `server/routes.ts` (added redirects)
-- Added: `MANAGEMENT_RESTRUCTURE_CHANGELOG.md`
+- `client/src/pages/management.tsx` (complete redesign with About page styling)
+- `client/src/pages/robert-yorke.tsx` (section merger and title updates)
+- `client/src/pages/about.tsx` (updated team references and titles)
+- `client/src/index.css` (added unified theme tokens and management styling)
+- `data/leadership.json` (created centralized leadership data)
+- Added: `MANAGEMENT_RESTRUCTURE_CHANGELOG.md` (comprehensive documentation)

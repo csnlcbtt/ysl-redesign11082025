@@ -1,0 +1,143 @@
+Finalise Management page alignment + update Dr. Robert T. Yorke biography
+Goals
+
+Make the Management page visually identical to other site pages that use the light theme.
+
+Keep alternating portraits left and right.
+
+On Dr. Robert T. Yorke’s page, merge “Career & Business Foundation” into “Early Life & Education” and remove the extra section.
+
+Constraints
+
+Do not introduce new libraries.
+
+Reuse About page grid, card, button, and breadcrumb components.
+
+Refer to Dr. Robert T. Yorke as Founder everywhere.
+
+Task A — Standardise Management page styling
+
+Adopt About page container and grid
+
+Use the same max-width, gutters, and spacing as /about/.
+
+Remove any page-specific overrides that change background, shadows, border-radius, or fonts.
+
+Cards and portraits
+
+Background: #fff
+
+Border: 1px solid #e8eaed
+
+Radius: 6px
+
+Shadow: 0 1px 3px rgba(0,0,0,.08)
+
+Portraits use the same class and aspect ratio as About page portraits. Height clamp to match About on desktop, scale proportionally on mobile.
+
+Headings and text
+
+H1 uses the same style as About H1.
+
+Name line is H2 with the same size as About section headings.
+
+Role label appears as normal sentence case text under the name, no custom badges.
+
+Buttons and breadcrumb
+
+Replace any custom pill buttons with the site orange button used on About, including hover and focus states.
+
+Breadcrumb style must match About exactly.
+
+Alternating layout
+
+Keep stacked sections with alternating image position:
+
+Founder image left, text right
+
+Executive Chairman image right, text left
+
+Managing Director image left, text right
+
+Contracts Administrator image right, text left
+
+Safety Officer image left, text right
+
+Copy sync
+
+Confirm the five bios and titles exactly match the approved text.
+
+Remove all legacy names sitewide.
+
+Ensure the Home sidebar and About lists display the same five names in the same order.
+
+CSS to apply (use in global stylesheet or the page bundle)
+/* use the same tokens as About */
+:root{
+  --ysl-bg:#fff; --ysl-ink:#222; --ysl-muted:#6b6f74;
+  --ysl-accent:#ff7a00; --ysl-border:#e8eaed;
+  --ysl-radius:6px; --ysl-shadow:0 1px 3px rgba(0,0,0,.08);
+  --container-max:1080px; --gutter:24px;
+}
+
+.management .container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}
+.management h1{ /* same as About H1 */ font-size:32px;line-height:1.2;color:var(--ysl-ink);margin:24px 0;}
+.management .card{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;
+  background:#fff;border:1px solid var(--ysl-border);border-radius:var(--ysl-radius);
+  box-shadow:var(--ysl-shadow);padding:20px;margin:28px 0;}
+.management .card.alt{grid-template-columns:1.2fr 1fr;} /* flip columns */
+.management .portrait img{width:100%;height:520px;object-fit:cover;border-radius:var(--ysl-radius);}
+.management h2{font-size:20px;margin:0 0 6px;color:var(--ysl-ink);}
+.management .role{color:var(--ysl-muted);font-size:14px;margin:0 0 12px;}
+.management .btn{background:var(--ysl-accent);color:#fff;padding:8px 14px;border-radius:4px;text-decoration:none;}
+@media (max-width:900px){ .management .card,.management .card.alt{grid-template-columns:1fr;} .management .portrait img{height:380px;} }
+
+Task B — Merge sections on Dr. Robert T. Yorke page
+
+Rename the page header
+
+Title: Dr. Robert T. Yorke
+
+Subtitle under name: Founder
+
+Qualifications line remains as displayed.
+
+Merge content
+
+Take the text in “Career & Business Foundation” and append it to the end of “Early Life & Education”.
+
+Use this revised section heading: Early Life, Education and Career Foundation.
+
+Replace the body of that combined section with the following merged copy:
+
+Merged body text
+“Dr. Robert T. Yorke was born in 1932 in Tobago, where he received his primary and secondary education as the second of eight siblings. After leaving school he completed an apprenticeship in Tobago, then moved to Trinidad to work at the Longdenville brick factory. In 1956 he left for England to pursue engineering studies at Hammersmith College, University of London, and after graduating continued professional training in the United Kingdom, working with several British engineering consultancies including Mott Hay and Anderson.
+In 1967 he returned to the Caribbean as a design engineer with the Ministry of Works in Antigua. He moved back to Trinidad and Tobago in 1968 to accept the post of Chief Engineer at Sanders and Foster Caribbean Ltd. Within months he was promoted to Technical Director and soon assumed full responsibility for operations. In 1972, when Sanders and Foster exited the region, he founded Yorke Structures Ltd. He often stated that clear goals, discipline, and the willingness to make sacrifices were the foundation of success.”
+
+Remove the old section
+
+Delete the standalone Career & Business Foundation section block, its heading, image, and spacer.
+
+Remove any local anchors or table-of-contents links that point to it.
+
+Ensure the next section now begins with Business Philosophy & Leadership.
+
+Image alignment
+
+Keep the same portrait classes used on About.
+
+If two portraits were used in the removed section, keep the best one in the revised top section and discard the duplicate.
+
+Task C — QA and acceptance
+
+Management page uses the same container, headings, button, background, and shadows as About.
+
+Portraits alternate left and right.
+
+Dr. Robert T. Yorke page shows a single combined section titled “Early Life, Education and Career Foundation” and no separate “Career & Business Foundation” block.
+
+All references to Dr. Robert T. Yorke across the site use the title Founder.
+
+No legacy names appear in search, sitemap, or menus.
+
+Mobile layout matches About page behavior.

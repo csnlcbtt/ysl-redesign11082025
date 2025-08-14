@@ -13,7 +13,7 @@ export default function RobertYorke() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold yorke-gray mb-2">Dr. Robert T. Yorke</h1>
-          <p className="text-lg yorke-gray">Founder & Chairman Emeritus</p>
+          <p className="text-lg yorke-gray">Founder</p>
           <p className="yorke-gray">D. Eng. (Hon.), CEng. FIStructE, FICE, FAPE</p>
         </div>
 
@@ -29,49 +29,22 @@ export default function RobertYorke() {
                 />
               </div>
               <div className="md:col-span-2">
-                <h2 className="text-2xl font-bold yorke-orange mb-4">Early Life & Education</h2>
+                <h2 className="text-2xl font-bold yorke-orange mb-4">Early Life, Education and Career Foundation</h2>
                 <p className="yorke-gray leading-relaxed mb-4">
-                  Dr. Robert T. Yorke was born in 1933 in Tobago where he received his primary and secondary education. He was the second of eight siblings. After leaving school he took an apprenticeship in Tobago before moving to Trinidad to work at the Longdenville brick factory where his cousin was the general foreman.
+                  Dr. Robert T. Yorke was born in 1932 in Tobago, where he received his primary and secondary education as the second of eight siblings. After leaving school he completed an apprenticeship in Tobago, then moved to Trinidad to work at the Longdenville brick factory. In 1956 he left for England to pursue engineering studies at Hammersmith College, University of London, and after graduating continued professional training in the United Kingdom, working with several British engineering consultancies.
+                </p>
+                <p className="yorke-gray leading-relaxed mb-4">
+                  In 1967 he returned to the Caribbean as a design engineer with the Ministry of Works in Antigua. He moved back to Trinidad and Tobago in 1968 to accept the post of Chief Engineer at Sanders and Foster Caribbean Ltd. Within months he was promoted to Technical Director and soon assumed full responsibility for operations. In 1972, when Sanders and Foster exited the region, he founded Yorke Structures Ltd. He often stated that clear goals, discipline, and the willingness to make sacrifices were essential to success.
                 </p>
                 <p className="yorke-gray leading-relaxed">
-                  In 1956 he left for England to pursue his studies in Engineering at the Hammersmith College (part of the University of London). After graduating he continued his professional training in the United Kingdom and worked for several British engineering consultancies including Mott Hay & Anderson and Andrews, Kent & Stone.
+                  His vision for the company was guided by unshakeable confidence in his abilities and those of his team. Dr. Yorke built YSL into the Caribbean's premier structural engineering consultancy through methodical planning, exacting standards, and an unwavering commitment to client satisfaction. His leadership philosophy emphasized both technical excellence and business acumen, establishing the foundation for YSL's continued success across multiple decades.
                 </p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Career Journey */}
-        <Card className="border-yorke-border mb-8">
-          <CardHeader className="yorke-dark text-white">
-            <CardTitle className="text-xl">Career & Business Foundation</CardTitle>
-          </CardHeader>
-          <CardContent className="p-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <img 
-                  src={robertFormalPhoto} 
-                  alt="Dr. Robert T. Yorke - Professional" 
-                  className="rounded-lg shadow-lg w-full"
-                />
-              </div>
-              <div className="md:col-span-2 space-y-4">
-                <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Early Career</h3>
-                  <p className="yorke-gray leading-relaxed">
-                    In 1967 he left the United Kingdom to assume the post of Design Engineer at the Ministry of Works in Antigua and returned to Trinidad and Tobago in 1968 to accept the position of Chief Engineer at Sanders and Foster (Caribbean) Ltd. After three months he was promoted to Technical Director and subsequently assumed full responsibility for the company's operations.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold yorke-orange mb-2">Founding Yorke Structures Limited</h3>
-                  <p className="yorke-gray leading-relaxed">
-                    Five years later in 1972, when Sanders and Foster pulled out of the Caribbean, Bob started Yorke Structures Ltd. When asked to articulate the vision for the new company, he is clear in his original beliefs which remain as strong today. An exceptional believer in the power of positive thinking he will say that he knew that he could not fail at the new business as he was better than his rivals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+
 
         {/* Business Philosophy */}
         <Card className="border-yorke-border mb-8">
