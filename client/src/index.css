@@ -18,7 +18,7 @@
   --ysl-border: #e8eaed;
   --ysl-radius: 6px;
   --ysl-shadow: 0 1px 3px rgba(0,0,0,.08);
-  --container-max: 1152px;
+  --container-max: 1080px;
   --gutter: 24px;
   
   /* Base theme colors */
@@ -304,9 +304,4 @@
 .leaflet-popup-content {
   text-align: center;
   font-family: inherit;
-}
-
-/* Site-wide container utility */
-.max-w-site {
-  max-width: var(--container-max);
 }
