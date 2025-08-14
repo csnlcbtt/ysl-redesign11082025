@@ -45,7 +45,7 @@ export default function Management() {
             role: "Executive Chairman, YSL and MIBR",
             quals: "SHRM-SCP",
             image: "/img/leadership/jacqueline-westcott.jpg",
-            bio: "Jacqueline Yorke Westcott brings over eighteen years' expertise in organizational development and human resources management. As Executive Chairman of Yorke Structures Ltd and Mount Irvine Bay Hotel Ltd, she oversees governance, strategy, culture, and long-term growth. Her career includes senior roles in corporate training, intercultural consultancy, and executive coaching, with specialisation in recruitment, talent management, and succession planning. A SHRM Senior Certified Professional, Jacqueline holds advanced qualifications in leadership and organizational change. She is committed to building people systems that enhance performance, safety, and service excellence. Her leadership approach integrates strategic oversight with a strong focus on staff engagement, ensuring that YSL continues to grow while preserving its reputation for quality and integrity."
+            bio: "Jacqueline Yorke Westcott brings over eighteen years' expertise in organizational development and human resources management. As Executive Chairman of Yorke Structures Ltd and Mount Irvine Bay Hotel Ltd, she oversees governance, strategy, culture, and long-term growth. Her career includes senior roles in corporate training, intercultural consultancy, and executive coaching, with specialisation in recruitment, talent management, and succession planning. A SHRM Senior Certified Professional, Jacqueline holds advanced qualifications in leadership and organizational change. Her diverse skills are reflected in her formal qualifications – a BEng (Hons) Degree in Civil Engineering. She is committed to building people systems that enhance performance, safety, and service excellence. Her leadership approach integrates strategic oversight with a strong focus on staff engagement, ensuring that YSL continues to grow while preserving its reputation for quality and integrity."
           },
           {
             slug: "simon-westcott",
@@ -66,10 +66,10 @@ export default function Management() {
           {
             slug: "khadija-bourne-murray",
             name: "Khadija Bourne Murray",
-            role: "Safety Officer",
+            role: "QHSE Manager",
             quals: "NEBOSH; ISO 14001, 45001, 9001",
             image: "/img/leadership/khadija-bourne-murray.jpg",
-            bio: "Khadija Bourne Murray is a Safety Officer specialising in Occupational and Environmental Health and Safety. She is NEBOSH-certified and trained in ISO 14001, 45001, and 9001 management systems. Khadija leads the development and implementation of workplace safety policies, supports training and investigations, and ensures compliance with all HSE regulations. Her career spans HSE research, environmental consultancy, and forestry safety projects, giving her a broad perspective on risk management. Dedicated to fostering a proactive safety culture, she works closely with operational teams to improve safety performance and reduce workplace hazards. Khadija's approach combines technical expertise with a commitment to continuous improvement and employee well-being."
+            bio: "Khadija Bourne Murray is a QHSE Manager specialising in Quality, Health, Safety and Environmental management systems. She is NEBOSH-certified and trained in ISO 14001, 45001, and 9001 management systems. Khadija leads the development and implementation of workplace safety policies, supports training and investigations, and ensures compliance with all HSE regulations. Her career spans HSE research, environmental consultancy, and forestry safety projects, giving her a broad perspective on risk management. Dedicated to fostering a proactive safety culture, she works closely with operational teams to improve safety performance and reduce workplace hazards. Khadija's approach combines technical expertise with a commitment to continuous improvement and employee well-being."
           }
         ]);
       });

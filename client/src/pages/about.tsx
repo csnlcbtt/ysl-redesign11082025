@@ -128,7 +128,7 @@ export default function About() {
                   </div>
                   <div>
                     <h5 className="font-semibold yorke-gray">Khadija Bourne Murray</h5>
-                    <p className="text-sm yorke-gray">Safety Officer</p>
+                    <p className="text-sm yorke-gray">QHSE Manager</p>
                   </div>
                 </div>
                 <div className="mt-4">
