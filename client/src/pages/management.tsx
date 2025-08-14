@@ -94,25 +94,6 @@ export default function Management() {
 
   return (
     <div className="yorke-beige min-h-screen">
-      {/* Breadcrumb matching About page */}
-      <div className="ysl-bc">
-        <div className="max-w-6xl mx-auto px-4">
-          <nav className="ysl-bc-list">
-            <span className="ysl-bc-item">
-              <Link href="/" className="ysl-bc-link">Home</Link>
-            </span>
-            <span className="ysl-bc-separator">/</span>
-            <span className="ysl-bc-item">
-              <Link href="/about" className="ysl-bc-link">About</Link>
-            </span>
-            <span className="ysl-bc-separator">/</span>
-            <span className="ysl-bc-item">
-              <span className="ysl-bc-current">Management</span>
-            </span>
-          </nav>
-        </div>
-      </div>
-      
       <div className="management">
         <div className="container max-w-6xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold yorke-gray mb-6">Management</h1>
