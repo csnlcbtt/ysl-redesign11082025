@@ -1,0 +1,91 @@
+Sync Management page with site theme and content
+Goal
+
+Make the Management page visually and structurally consistent with the rest of the site, keep the alternating portrait layout, and ensure one source of truth for leadership data across Home, About, and Management.
+
+Inputs
+
+Existing site theme: light background, orange accent, card radius 6px, subtle shadows
+
+Current pages: Home, About, About → Management
+
+Final bios and titles for 5 people are provided below in “Content”
+
+Constraints
+
+No new libraries
+
+Respect existing grid, fonts, and button style from About
+
+Do not change URLs except where redirects are specified
+
+Tasks
+1) Create a single source of truth
+
+Create /data/leadership.json and populate with the five leaders in this exact order.
+
+[
+  {"slug":"robert-yorke","name":"Dr. Robert T. Yorke","role":"Founder","quals":"D.Eng. (Hon.), CEng, FIStructE, FICE, FAPETT","image":"/img/leadership/robert-yorke.jpg"},
+  {"slug":"jacqueline-yorke-westcott","name":"Jacqueline Yorke Westcott","role":"Executive Chairman, YSL and MIBR","quals":"SHRM-SCP","image":"/img/leadership/jacqueline-westcott.jpg"},
+  {"slug":"simon-westcott","name":"Simon H. Westcott","role":"Managing Director","quals":"BSc (Hons), CEng, MBA, MICE, MAPETT, FIStructE","image":"/img/leadership/simon-westcott.jpg"},
+  {"slug":"kenneth-prince","name":"Kenneth Prince","role":"Contracts Administrator","quals":"MCIOB","image":"/img/leadership/kenneth-prince.jpg"},
+  {"slug":"khadija-bourne-murray","name":"Khadija Bourne Murray","role":"Safety Officer","quals":"NEBOSH; ISO 14001, 45001, 9001","image":"/img/leadership/khadija-bourne-murray.jpg"}
+]
+
+
+Use this file to render:
+
+About page “Board of Directors” and “Management Team” lists
+
+Management page profile cards
+
+Home sidebar “Learn about our founder”
+
+2) Unify theme and layout
+
+Add theme tokens and component CSS to the global stylesheet.
+
+:root{
+  --ysl-bg:#fff;
+  --ysl-ink:#222;
+  --ysl-muted:#6b6f74;
+  --ysl-accent:#ff7a00;
+  --ysl-border:#e8eaed;
+  --ysl-radius:6px;
+  --ysl-shadow:0 1px 3px rgba(0,0,0,.08);
+  --container-max:1080px;
+  --gutter:24px;
+}
+
+/* Management page */
+.management .container{max-width:var(--container-max);margin:0 auto;padding:0 var(--gutter);}
+.management h1{font-size:32px;line-height:1.2;color:var(--ysl-ink);margin:24px 0;}
+.management .card{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;background:var(--ysl-bg);border:1px solid var(--ysl-border);border-radius:var(--ysl-radius);box-shadow:var(--ysl-shadow);padding:20px;margin:28px 0;}
+.management .card.alt{grid-template-columns:1.2fr 1fr;}
+.management .portrait img{width:100%;height:520px;object-fit:cover;border-radius:var(--ysl-radius);}
+.management h2{font-size:20px;margin:0 0 6px;color:var(--ysl-ink);}
+.management .quals{color:var(--ysl-muted);font-size:14px;margin-bottom:8px;}
+.management .role-badge{display:inline-block;font-size:12px;padding:4px 8px;border:1px solid var(--ysl-border);background:#fafbfc;border-radius:999px;margin:6px 0;}
+.management .btn{display:inline-block;background:var(--ysl-accent);color:#fff;padding:8px 14px;border-radius:4px;text-decoration:none;}
+@media (max-width:900px){ .management .card,.management .card.alt{grid-template-columns:1fr;} .management .portrait img{height:380px;} }
+
+
+Alternate layout by toggling .card and .card alt sequentially:
+
+Founder: .card
+
+Executive Chairman: .card alt
+
+Managing Director: .card
+
+Contracts Administrator: .card alt
+
+Safety Officer: .card
+
+3) Standardize components
+
+Reuse the About page container, breadcrumbs, and button classes
+
+Replace any custom pill buttons on Management with the existing orange button .btn
+
+Set all headings to match the About hierarchy

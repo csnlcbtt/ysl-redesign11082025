@@ -10,6 +10,17 @@
   --yorke-border: hsl(28, 8%, 72%);
   --yorke-dark: hsl(0, 0%, 20%);
   
+  /* Unified YSL theme tokens */
+  --ysl-bg: #fff;
+  --ysl-ink: #222;
+  --ysl-muted: #6b6f74;
+  --ysl-accent: #ff7a00;
+  --ysl-border: #e8eaed;
+  --ysl-radius: 6px;
+  --ysl-shadow: 0 1px 3px rgba(0,0,0,.08);
+  --container-max: 1080px;
+  --gutter: 24px;
+  
   /* Base theme colors */
   --background: hsl(60, 16%, 91%);
   --foreground: hsl(0, 0%, 33%);
@@ -207,6 +218,85 @@
   .ysl-bc-current {
     max-width: 120px;
     flex-shrink: 0;
+  }
+}
+
+/* Management page unified theme */
+.management .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.management h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  color: var(--ysl-ink);
+  margin: 24px 0;
+}
+
+.management .card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+  background: var(--ysl-bg);
+  border: 1px solid var(--ysl-border);
+  border-radius: var(--ysl-radius);
+  box-shadow: var(--ysl-shadow);
+  padding: 20px;
+  margin: 28px 0;
+}
+
+.management .card.alt {
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.management .portrait img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--ysl-radius);
+}
+
+.management h2 {
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: var(--ysl-ink);
+}
+
+.management .quals {
+  color: var(--ysl-muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.management .role-badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid var(--ysl-border);
+  background: #fafbfc;
+  border-radius: 999px;
+  margin: 6px 0;
+}
+
+.management .btn {
+  display: inline-block;
+  background: var(--ysl-accent);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .management .card,
+  .management .card.alt {
+    grid-template-columns: 1fr;
+  }
+  
+  .management .portrait img {
+    height: 380px;
   }
 }
 
