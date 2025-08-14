@@ -95,7 +95,7 @@ export default function Management() {
   return (
     <div className="yorke-beige min-h-screen">
       <div className="management">
-        <div className="container max-w-site mx-auto px-4 py-8">
+        <div className="container max-w-6xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold yorke-gray mb-6">Management</h1>
           <p className="text-lg yorke-gray mb-8 max-w-4xl">
             Leadership excellence driving structural engineering innovation across the Caribbean for over five decades.
